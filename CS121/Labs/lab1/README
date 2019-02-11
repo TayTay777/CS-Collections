@@ -1,0 +1,17 @@
+Lab1
+CS121
+09/04/2015
+Taylor Roberts
+
+OVERVIEW:
+Create a program that utilizes the Scanner Class by allowing input into the console and getting a result from a 
+program that have been created already. 
+
+INCLUDED FILES:
+
+ConvertToSeconds.java (This program converts hours, minutes, and seconds into a total number of seconds.)
+ConvertToHours.java (This program converts seconds into hours, minutes, and seconds as well as just hours in a 
+fractional output.)
+README
+Eclipse screenshot
+

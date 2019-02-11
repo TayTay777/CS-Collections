@@ -1,0 +1,61 @@
+****************
+* Project One/TrafficAnimation
+* CS 121
+* 09/19/2015
+* Taylor Roberts
+****************
+
+OVERVIEW:
+
+Program utilizes movement of an object accross the paint window using the Color and Graphics class. The object is a vehicle moving accross a landscape. 
+
+
+INCLUDED FILES:
+
+ * TrafficAnimation.java - Project1
+ * README - explanation of Project1
+
+
+COMPILING AND RUNNING:
+
+ From the directory troberts/workspace/p1, compile the
+ driver class (and all dependencies) with the command:
+ $ javac TrafficAnimation.java
+
+ Run the compiled class file with the command:
+ $ java TrafficAnimation
+
+ Console output will give the results after the program finishes.
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+All variables added through the graphics class are scaled using the height and width of the window as the foundation for width and height of the objects. 
+-Note spacecraft, car, and moon are not sized according to the change in window width, but only in window height in order the keep the same shape of the object. 
+
+The vehicle is comprized of several differnt shapes in order to achieve desired output.
+
+When the window is squeezed horizontally the moon is positioned as to go behind the mountains in order to give the allusion of reality.
+
+The spacecar moves to the right and the spacecraft moves to the left. 
+
+Spacecar x coordinate for movement: x4; x4 = x -500
+                                x = (x + stepSize) % (width + 600)
+Spacecraft x coordinate for movement: x3; x3 = (width - x)
+                                           x = (x + stepSize) % (width + 600)
+
+TESTING:
+
+Testing involved resizing the window while the program was running. In all instances of window size the program ran fine with no issues with graphic objects going out of he window.
+
+DISCUSSION:
+
+The first issue I experienced involved getting my vehicle from squishing itself when the window was resized. I soon realized that if I used the height as a reference point for both the width and height of the vehicle it would still resize and remane the same shape.
+
+There was an issue with getting my vehicles to smoothly come out of the edge from the tip of the vehicle to the bottom, then reset. Subracting 500 from the origion x line was not working for consecutive frames. After much guidance from tutors I created a new x coordinate as shown above under "PROGRAM DESIGN AND IMPORTANT CONCEPTS:" at the bottom. 
+
+EXTRA CREDIT:
+
+Two objects moving in separate directions.
+Smoothed out the wrapping
+

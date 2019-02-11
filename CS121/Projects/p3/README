@@ -1,0 +1,84 @@
+****************
+* p3
+* CS 121
+* Oct 24, 2015
+* Taylor Paul Roberts
+****************
+
+OVERVIEW:
+
+The Class RandomWalk creates different methods that create an object that travels across a grid. 
+The methods include create one movement, to creating the entire movement in one method. 
+The class also stores all the steps of the object with use of an array list. 
+
+The program RandomWalkTest runs a random seed to generate points and an object that courdinate across a grid. 
+To not be confused, the grid size accounts for 0 as a point. 
+Ex. if you enter 22 for grid size, then the actual grid is 21 x 21
+
+Eventually the object will reach the destination of the max x and y values.
+
+INCLUDED FILES:
+
+ e.g.
+ * GridMap.java
+ * RandomWalk.java
+ * RandomWalkGUI.java
+ * RandomWalkTest.java
+ * README
+
+
+COMPILING AND RUNNING:
+
+In order to run the program, the user can execute RandomWalkTest.
+This program will ask for a grid size and a random seed. If you enter 0 for the 
+random seed, the path will be different with every 0, otherwise will be the same 
+everytime you enter in the same seed. 
+
+Running an actual visual simulation takes the use of the RandomWalkGUI. This program should 
+only be ran by the console. When executing the program by // java RandomWalkGUI make sure to 
+include the grid size and seed. 
+
+and example for a gridsize of 22 and a seed of 0 would be // java RandomWalkGUI 22 0
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+I programmed this design to be user friendly and understanble. 
+There are two constructors. One is designed to accept gridsize and a seed. 
+The other is designed to accept only the gridsize, seeing the seed as nonexistent. 
+
+The step() method should be pretty explainable
+with many for loops for the x and y courdinates. The randomness of the x and y addition is dictated by a random boolean for true and false. The random boolean generator is seeded. If the same seed is entered over and over again, the same courdinates should be generated up until the grid size difference. If 0 is entered for the seed, the user should experience
+a different set of courdinates everytime they run the RandomWalkTest even with the same grid size. 
+
+The createPath() method with create all the points that the grid will allow, all in one step.
+
+There are other methods that will return values for the constructor objects. They are outlined
+with detailed comments in the RandomWalk java file. 
+
+As stated about under COMPILING AND RUNNING, RandomWalkTest creates objects for you using the 
+constructors with your scanned input. 
+
+TESTING:
+
+I ran a series of tests with the RandomWalkTest to make sure my methods in the RandomWalk were working properly 
+as well as use the RandomWalkGUI to test the visual output of the entire walk. I created a do while loop to keep 
+testing the loop in order to compare the different seeds vs 0 entered for seed. I have commented this loop out. If 
+you would like to use it, please do so you can test it very easily, seeing the differnt paths compared on 
+one console. 
+
+DISCUSSION:
+
+As I was writing the program, I found that the most challenging part was imagining the x and y courdinates 
+transcending to one side or the other randomly. This is seen in the step() method. There was another issue
+with the understanding of the gridsize definition. When I am asked to make a grid of the size 4, I imagine
+a grid size that is 4 x 4, as in 4 squares by 4 squares, as is seen in many other mathmatical expressions, 
+and in other programs. This was explained to me that the point 0 is consided a point to the grid size. It
+would have made sense if the grid size was instead called grid lines.
+
+Otherwise the everything else was relatively easy to get on my own. I had a little trouble with the array 
+list. It would keep showing the same point for every step. It turned out I was storing the step correctly,
+but then I realized that the steps where not steps, but just one step. The one step I was changing correctly, 
+yet I should have created a new step every step. I was not aware that the array list's stored objects will change
+if you change them outside the array list. I believed the array list just made a copy of whatever was put into 
+it, without ever changing it again. 
