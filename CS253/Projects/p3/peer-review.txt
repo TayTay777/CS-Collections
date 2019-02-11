@@ -1,0 +1,14 @@
+Taylor Roberts & Luke Grice Conversation
+
+
+
+
+Question responses:
+1 & 2. The tasks required are to make more fuctions in the shell. Example, make an array of history for the exact command lines inputted by the user. Also, to design the code in a modular design fashion to make it easier for users. 
+
+3. 
+Readability: 2 Everything is perfectly indented perfectly, and variables are named "easy to understand", the only thing I can think of is to use fuctions, but that is covered under stucture. 
+
+Structure: 1 Everything was in main, but everything is very clean looking, easy to navigate. No occompything tests, but not really neccessary for this project. (batch was included)
+
+Testing: 1 No tests, again because of included test file. 

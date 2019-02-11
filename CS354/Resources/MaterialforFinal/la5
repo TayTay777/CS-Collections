@@ -1,0 +1,234 @@
+****** BinaryCounter.cs ******
+
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+/*
+*Class that adds features to the Windows.Forms.TextBox class
+*/
+
+// ':' character represents the extends option
+// simularly java uses "extends" for inheriting methods
+class BinaryCounter : TextBox {
+
+  int counter;
+  
+  public BinaryCounter(int count){
+    counter = count;
+    //Text is a TextBox class variable
+    Text = Convert.ToString(counter, 2);
+  }
+
+
+  public void plusOne(){
+    counter = ++counter;
+    //Text is a TextBox class variable
+    Text = Convert.ToString(counter, 2);
+  } 
+}
+
+
+
+***** LightSwitch.cs *****
+
+
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+/*
+*
+*Class that extends Windows.Forms.Form class
+*
+*
+*/
+
+
+
+
+class LightSwitch : Form {
+
+
+  BinaryCounter biCount;
+  ToggleButton togButton;
+
+
+  public LightSwitch() {
+    //Things like "Text" and "Size" below are refering to the Form class 
+    //itself. In other words Form class variables
+    Text = "Button";
+    Size = new Size(250,200);
+    
+    biCount = new BinaryCounter(0);
+    togButton = new ToggleButton("off", "on");
+    
+    int PANEL_HEIGHT = togButton.Height + 8;
+    
+    //panel is for the square that the two objects,
+    //togButton and biCount, will lay on.
+    Panel panel = new Panel();
+    panel.Height = PANEL_HEIGHT;
+    panel.Dock = DockStyle.Top;
+    //"this" is refering to the Form
+    panel.Parent = this;
+    
+    int x = togButton.Width * 2 + 15;
+    int y = (PANEL_HEIGHT - togButton.Height) / 2;
+    
+    //".Parent" tells togButton where to lay
+    togButton.Parent = panel;
+    togButton.Location = new Point(Width - x - (togButton.Width/2), y);
+    //".Anchor" allows several places for the object to be. 
+    //for example Top, Bottom, Right, etc.
+    //you can even combine them. 
+    togButton.Anchor = AnchorStyles.Top;
+    
+      
+    biCount.Parent = panel;
+    biCount.Location = new Point(x - 5 - (togButton.Width/2), y);
+    biCount.Anchor = AnchorStyles.Top;
+  
+    //every time a "click" happens, the methods within
+    //OnClick are enacted
+    togButton.Click += new EventHandler(OnClick);
+  
+    //centers the window to the center of the console
+    CenterToScreen();
+    
+    }
+    
+    //mentioned in README after ## Running the tests header  
+    //method for calling Button and TextBox methods upon a click
+    void OnClick(object sender, EventArgs e) {
+      biCount.plusOne();
+      togButton.toggleOnOff();
+    }
+  }
+
+
+//main class for running the program
+class MApplication {
+    public static void Main() {
+        Application.Run(new LightSwitch());
+    }
+}
+
+
+
+****** ToggleButton.cs ******
+
+
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+/*
+*Class that adds features to the Windows.Forms.Button class
+*/
+
+
+
+// ':' character represents the extends option
+// simularly java uses "extends" for inheriting methods
+class ToggleButton : Button {
+
+  string togOne;
+  string togTwo;
+
+  
+  
+public ToggleButton ( string toggleOne, string toggleTwo){
+
+  //base.ToggleButton(togOne);
+  togOne = toggleOne;
+  togTwo = toggleTwo;
+  //Text is a Button class variable
+  Text = togOne;
+  togOne = toggleOne;
+  togTwo = toggleTwo;
+  //Button button = new Button();
+  //button.Text = togOne;
+
+}
+
+
+public void toggleOnOff(){
+  
+  string s = togOne;
+  togOne = togTwo;
+  togTwo = s;
+  //Text is a Button class variable
+  Text = togOne;
+
+
+}
+
+}
+
+
+***** README ******
+
+
+Taylor Roberts
+CS354-2
+Dr. James Buffenbarger 
+Interpreter2 
+
+
+This program suite is a port from a java to C#. When ran, a window will pop up with a button and text field. The text in the center of the button will change from on to off and vise versa when clicked and every time the button is clicked a binary representation of the amount of clicks will show in the text field to the right of the button. 
+
+
+## Getting Started
+
+
+Once in the directory of the C# suite, compile by running command...
+
+[User]$ mcs -r:System.Windows.Forms.dll -r:System.Drawing.dll \
+LightSwitch.cs \
+BinaryCounter.cs \
+ToggleButton.cs \
+
+(Note '\' characters are not neccessarily part of the compile command, but rather to show the command is one line. Can still be copied and pasted as is, and run fine.)
+
+
+Once compiled, the program can be run and tested by typing...
+
+[User]$ mono LightSwitch.exe
+
+which will bring up the window described in the brief description header. 
+
+### Prerequisites
+
+You will need a C# compiler and executor installed in the shell you are using.
+
+Mono, which is sponsored by Microsoft, has a free download at,
+https://www.mono-project.com/download/stable/
+
+Description at,
+https://www.mono-project.com/docs/about-mono/languages/csharp/
+
+## Running the tests
+
+As far as testing went, I first followed the tutorials from http://zetcode.com/gui/csharpwinforms and ran the code provided. After I got a general sense of the C# layout with Forms, I started to understand how to extend classes as well. 
+
+Before a made three separate files, I first put everything into one large file because I knew that would be fairly easy. Basically done to test basic coding structure first.
+
+After I created the three files.cs from what I learned via zetcode.com, I ran and followed the error corrections based on the stack trace. I don't know if it's just me being inexperienced with C#, or what, but I thought the error codes weren't very helpful. 
+
+I did run into one major issue that I had to put a band-aid on. I could not figure out how to call the OnClick methods I created for the button and counter classes within the lightswitch class. The compiler kept saying I could only call the OnClick methods within the class that it was created in. To at least get the program to mimic the java suite, I changed the type of the OnClick methods to regular methods that do the same thing. I then called the methods within a newly created OnClick() within the lightSwith.cs file itself. I have commented this part of lightSwitch.cs, to help the reader reference back here.  
+
+
+## Final Notes
+
+All in all, I would say the tutorial about winforms (link above under "Running the tests") was the most helpful. With that, and the simularities of java and C# I put two and two together. I was worried because I'm not too familiar with JPanel and JButton.
+
+
+###Authors###
+
+Taylor Paul Roberts and credit to Dr. James Buffenbarger for the java suite the program was ported from and helpful tutorial links!
+
+
+
+
+

@@ -1,0 +1,20 @@
+  Grade 95/100
+==================================================
+  Passing all grading scripts             (25 points) 
+
+  Makefile is correctly written           (10 points) 5
+  run the smash and valgrind for make and make all
+
+  strtok is correctly used.               (10 points) 
+
+  fgets is correctly used.                (10 points) 
+
+  Exit command works and has a clean exit (10 points)
+    No segfaults       (5 points)  
+    No memory leaks    (5 points)
+
+  cd command works                        (10 points)
+
+  Code quality                            (15 points)
+
+  README                                  (10 points)

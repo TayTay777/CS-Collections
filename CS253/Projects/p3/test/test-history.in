@@ -1,0 +1,7 @@
+ls -l -a  /home/FarhadRasapour/cs253/script/p3/
+history
+touch hello.txt
+cat hello.txt
+ls /home/FarhadRasapour/cs253/script/p3/
+history
+exit

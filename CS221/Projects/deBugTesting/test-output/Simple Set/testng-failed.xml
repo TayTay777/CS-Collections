@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Simple Set]">
+  <test name="ArraySet(failed)">
+    <classes>
+      <class name="TestSimpleSet_NewEmptySet">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_NewEmptySet -->
+      <class name="TestSimpleSet_AB_addB_AB">
+        <methods>
+          <include name="testRemove_B"/>
+          <include name="initializeSet"/>
+          <include name="testRemove_A"/>
+        </methods>
+      </class> <!-- TestSimpleSet_AB_addB_AB -->
+      <class name="TestSimpleSet_ABC_removeB_AC">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_ABC_removeB_AC -->
+      <class name="TestSimpleSet_ABC_removeA_BC">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_ABC_removeA_BC -->
+      <class name="TestSimpleSet_Empty_addA_A">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_Empty_addA_A -->
+      <class name="TestSimpleSet_AB_addA_AB">
+        <methods>
+          <include name="initializeSet"/>
+          <include name="testRemove_A"/>
+          <include name="testRemove_B"/>
+        </methods>
+      </class> <!-- TestSimpleSet_AB_addA_AB -->
+      <class name="TestSimpleSet_A_addB_AB">
+        <methods>
+          <include name="testRemove_A"/>
+          <include name="testRemove_B"/>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_A_addB_AB -->
+      <class name="TestSimpleSet_ABC_addC_ABC">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_ABC_addC_ABC -->
+      <class name="TestSimpleSet_A_removeA_Empty">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_A_removeA_Empty -->
+      <class name="TestSimpleSet_ABC_removeC_AB">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_ABC_removeC_AB -->
+      <class name="TestSimpleSet_ABC_addB_ABC">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_ABC_addB_ABC -->
+      <class name="TestSimpleSet_ABC_addA_ABC">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_ABC_addA_ABC -->
+      <class name="TestSimpleSet_AB_removeA_B">
+        <methods>
+          <include name="testContains_B"/>
+          <include name="testSize"/>
+          <include name="testToString"/>
+          <include name="testIsEmpty"/>
+          <include name="testRemove_B"/>
+          <include name="testAdd_B"/>
+          <include name="testContains_A"/>
+          <include name="testAdd_C"/>
+          <include name="initializeSet"/>
+          <include name="testRemove_A"/>
+        </methods>
+      </class> <!-- TestSimpleSet_AB_removeA_B -->
+      <class name="TestSimpleSet_A_addA_A">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_A_addA_A -->
+      <class name="TestSimpleSet_AB_addC_ABC">
+        <methods>
+          <include name="initializeSet"/>
+        </methods>
+      </class> <!-- TestSimpleSet_AB_addC_ABC -->
+      <class name="TestSimpleSet_AB_removeB_A">
+        <methods>
+          <include name="testContains_B"/>
+          <include name="testSize"/>
+          <include name="testToString"/>
+          <include name="testIsEmpty"/>
+          <include name="testAdd_A"/>
+          <include name="testRemove_B"/>
+          <include name="testAdd_B"/>
+          <include name="testContains_A"/>
+          <include name="initializeSet"/>
+          <include name="testRemove_A"/>
+        </methods>
+      </class> <!-- TestSimpleSet_AB_removeB_A -->
+    </classes>
+  </test> <!-- ArraySet(failed) -->
+</suite> <!-- Failed suite [Simple Set] -->

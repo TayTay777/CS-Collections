@@ -1,0 +1,22 @@
+  Grade 98/100
+==================================================
+  Modular checkpoint             (10 points)
+
+  Passing all grading scripts    (25 points) 
+  !fail the test-history.in script because clear command clear the history
+  that was not part of the assignment
+
+  No regressions were introduced (15 points) 13
+  running valgrind --leak-check=yes test as a default target in Makefile
+    Passing all grading scripts  (10 points) 
+    Exit command works and has a clean exit (5 points)
+      No segfaults         
+      No memory leaks    
+
+  All commands are correctly captured (25 points)
+
+  Code quality                        (15 points) 13
+  using global variable 
+
+  README                              (10 points)
+  

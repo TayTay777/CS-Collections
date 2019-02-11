@@ -1,0 +1,36 @@
+ C# tutorial:
+ http://zetcode.com/lang/csharp
+
+ C# Winforms Mono tutorial:
+ http://zetcode.com/gui/csharpwinforms
+
+
+ Introduction to C#:
+ http://msdn.microsoft.com/en-us/library/aa288436(v=vs.71).aspx
+
+
+For JPanel;
+System.Windows.Forms.Panel 
+System.Windows.Controls.Panel
+WPF: used for windows GUI applications within the windows OS. 
+
+For ActionListener;
+
+For JButton;
+
+
+
+Compilation command;
+
+mcs-r:System.Windows.Forms.dll-r:System.Drawing.dll \
+LightSwitch.cs \
+BinaryCounter.cs \
+ToggleButton.cs
+\
+mono LightSwitch.exe
+
+zetcode.com example:
+gmcs -r:System.Windows.Forms.dll -r:System.Drawing.dll simple.cs
+
+To change the execution name:
+gmcs -r:System.Windows.Forms.dll -r:System.Drawing.dll simple.cs -out:simpleexample.exe

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="BieberSort"/>
+	<classpathentry kind="src" path="ConsecutivePairs"/>
+	<classpathentry kind="src" path="Find"/>
+	<classpathentry kind="src" path="Order"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

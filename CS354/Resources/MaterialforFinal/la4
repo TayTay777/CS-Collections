@@ -1,0 +1,192 @@
+****** realDealConversion.awk ******
+
+
+#!/bin/awk -f
+
+# @author Taylor Paul Roberts
+
+BEGIN {
+
+    print "<html><body><table>";
+
+    # used to properly separate the values for the headers only
+    # keeping the values within the header fields together
+    # for example a large number like $54,666,890 would have been 
+    # been separated otherwise. 
+    FPAT = "([^,]+)|(\"[^\"]+\")"
+}
+
+# function used for changing tag to the type of row font
+# that best suites the type of info. In this programs case tag
+# only gets changed to "td".
+
+function printRow(tag) {
+
+    print "<tr>";
+    print "<"tag">"$1"</"tag">"; # date
+    print "<"tag">"$5"</"tag">"; # subdiv name
+    print "<"tag">"$6"</"tag">"; # lot
+    print "<"tag">"$7"</"tag">"; # block
+    print "<"tag">"$8"</"tag">"; # value
+    print "</tr>" 
+
+}
+
+# NR represents a new line in this scenario involving rows
+# NR being 1 is for sure the headers. Html does not add extra
+# space so I had to add &nbsp; four times to represent a tab
+# font is +2 sizes larger than default
+
+NR==1 {
+
+    print "<tr>";
+    print "<th><font size=\"+2\">&nbsp;&nbsp;&nbsp;&nbsp;"$1"&nbsp;&nbsp;&nbsp;&nbsp;</font></th>"; # date
+    print "<th><font size=\"+2\">&nbsp;&nbsp;&nbsp;&nbsp;"$5"&nbsp;&nbsp;&nbsp;&nbsp;</font></th>"; # subdiv name
+    print "<th><font size=\"+2\">&nbsp;&nbsp;&nbsp;&nbsp;"$6"&nbsp;&nbsp;&nbsp;&nbsp;</font></th>"; # lot
+    print "<th><font size=\"+2\">&nbsp;&nbsp;&nbsp;&nbsp;"$7"&nbsp;&nbsp;&nbsp;&nbsp;</font></th>"; # block
+    print "<th><font size=\"+2\">&nbsp;&nbsp;&nbsp;&nbsp;"$8"&nbsp;&nbsp;&nbsp;&nbsp;</font></th>"; # value
+    print "</tr>"
+}
+
+# NR greater than one represents all the info for the headers
+# substring function only call index 1-22 of the string in
+# question from $3, then changes all the characters to upper
+# case. If the statements yield matches the case, funtion 
+# printRow will be called for that NR value
+
+NR > 1 { 
+
+    switch (substr(toupper($3), 1, 22)) {
+    case "SINGLE FAMILY DWELLING":  
+       printRow("td")
+  }
+}
+
+
+END {
+    print "</table></body></html>"
+}
+
+
+****** table.html ******
+
+
+<html><body><table>
+<tr>
+<th><font size="+2">&nbsp;&nbsp;&nbsp;&nbsp;IssueDate&nbsp;&nbsp;&nbsp;&nbsp;</font></th>
+<th><font size="+2">&nbsp;&nbsp;&nbsp;&nbsp;SubNameOrTwnRngSec&nbsp;&nbsp;&nbsp;&nbsp;</font></th>
+<th><font size="+2">&nbsp;&nbsp;&nbsp;&nbsp;LOT&nbsp;&nbsp;&nbsp;&nbsp;</font></th>
+<th><font size="+2">&nbsp;&nbsp;&nbsp;&nbsp;BLOCK&nbsp;&nbsp;&nbsp;&nbsp;</font></th>
+<th><font size="+2">&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;</font></th>
+</tr>
+<tr>
+<td>10/04/2017</td>
+<td>SECLUDED CREEK ESTATES</td>
+<td>05</td>
+<td>01</td>
+<td>"$607,012.00"</td>
+</tr>
+<tr>
+<td>10/05/2017</td>
+<td>NEVILLE RANCH SUB NO 02</td>
+<td>4</td>
+<td>10</td>
+<td>"$200,815.00"</td>
+</tr>
+<tr>
+<td>10/06/2017</td>
+<td>HAZELWOOD VILLAGE SUB NO 15</td>
+<td>27</td>
+<td>43</td>
+<td>"$163,058.00"</td>
+</tr>
+<tr>
+<td>10/10/2017</td>
+<td>SOUTHCREEK SUB NO 01</td>
+<td>1</td>
+<td>3</td>
+<td>"$241,000.00"</td>
+</tr>
+<tr>
+<td>10/10/2017</td>
+<td>NEVILLE RANCH SUB NO 02</td>
+<td>06</td>
+<td>10</td>
+<td>"$179,214.00"</td>
+</tr>
+<tr>
+<td>10/10/2017</td>
+<td>AVIMOR SUB NO 04</td>
+<td>01</td>
+<td>19</td>
+<td>"$327,106.40"</td>
+</tr>
+<tr>
+<td>10/12/2017</td>
+<td>HIGHLANDER ESTATES SUB</td>
+<td>6</td>
+<td>1</td>
+<td>"$450,000.00"</td>
+</tr>
+<tr>
+<td>10/13/2017</td>
+<td>HAZELWOOD VILLAGE SUB NO 15</td>
+<td>11</td>
+<td>42</td>
+<td>"$253,748.00"</td>
+</tr>
+<tr>
+<td>10/13/2017</td>
+<td>FLOATING ZEE RANCH SUB</td>
+<td>3</td>
+<td>1</td>
+<td>"$353,314.00"</td>
+</tr>
+</table></body></html>
+
+
+
+
+****** README ****
+
+Taylor Paul Roberts
+CS354-2
+Dr. James Buffenbarger 
+la4
+
+
+This program utilizes the features the data scanning features of Awk to traverse a csv file, and print out desired results in an html format file. In particular, this program scans a csv (comma separated values) file in order to find and print out single family dwelling building permits info amongst a collection of other building permit locations. 
+
+## Getting Started
+
+Once in the directory of the program's contents, simply run the program as follows...
+
+[user]$ ./realDealConversion <name of csv file>.csv > <name of html file>.html
+
+Example:
+[user]$ ./realDealConversion.awk bldgPermits.csv > table.html
+
+### Prerequisites
+
+You will need to have Gawk installed from GNU. 
+
+Here is a link to all the gawk downloads 
+http://ftp.gnu.org/gnu/gawk/
+
+Here is a guide to expand and unzip the file package under "getting the gawk distribution" skip 1 and 2, and just follow 3. 
+ftp://ftp.gnu.org/old-gnu/Manuals/gawk-3.0.3/html_chapter/gawk_20.es.html
+
+## Running the tests
+
+Running tests was fairly simple for this program. I simple changed contents of the awk file, then printed out the results to the console. If Everything in the console looked the way I wanted it, I then directed the output to a new html file to see how the html font I was adding displayed. 
+
+Using my browsers developer options to see the html code of websites helped in asertaining what text to use for html. 
+
+## Special Thanks
+
+I would like to thank Dr. Buffenbarger for referencing chapter 4.7 of the GNU gawk user manual that pretty much gave a regular expression for keeping content that had commas within a cell together. Life saver.
+
+## Authors
+
+Taylor Paul Roberts
+

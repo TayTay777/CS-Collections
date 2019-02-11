@@ -1,0 +1,22 @@
+  Grade 85/100
+==================================================
+  fork and exec work correctly        25/25
+
+
+  Random KILL works                   10/15
+     kill a command randomly          (10)   
+     run all commands when shell variable is set(5)
+     -- still kill the command
+
+  No regressions were introduced      15/15
+     Passing all prior grader scripts (nothing broken) (5)
+     Passing valgrind with clean bill of health (5)
+     History command works (5)
+
+  Modular checkpoint                  10/10
+
+  Code quality                        15/15
+
+  README                              10/10
+  
+  Peer Review                         0/10   

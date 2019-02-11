@@ -1,0 +1,216 @@
+****** Account.st ********
+
+Object subclass: Account [
+
+  <comment: 
+    'This class is the parent class for the Checking and Savings accounts. All the methods here are inherited by the Checking and Savings account.'>
+
+  |number customer balance|
+
+  accrue: rate [
+    ^self subclassResponsibility
+  ]
+
+  balance [
+    ^balance
+  ]
+
+  deposit: amount [
+    balance:= balance+amount.
+  ]
+
+  withdraw: amount [
+    balance:= balance-amount.
+  ]
+
+  toString [
+    ^number,':',(customer toString),':',(balance asString).
+  ]
+
+]
+
+
+
+****** Bank.st *******
+
+
+
+Object subclass: Bank [
+  
+  <comment: 
+    'This is the class that stores checking and savings accounts'>
+    
+  |accounts|
+
+  Bank class[
+    new[
+      ^super new init
+    ]
+  ]
+
+  init [
+    accounts:= Set new
+  ]
+
+  add: account [
+    accounts add: account
+  ]
+
+  accrue: rate [
+    accounts do: [:account| account accrue:rate]
+  ]
+
+  toString[
+    |r| r:=''.
+    accounts do:[:account|r:=r, (account toString), (Character nl asString)].
+    ^r.
+  ]
+]
+
+|bank| bank:= Bank new.
+
+"COMMENT: add a name in the below line."
+|customer| customer :=Customer new init: 'Taylor'.
+
+"COMMENT: CHECKING: add account number, customer object (created above), and a balance."
+|checking| checking :=CheckingAccount new init: '00001' Customer:customer Balance:1000000000.00.
+
+"COMMENT: SAVINGS: add account number, customer object (created above), and a balance."
+|savings| savings :=SavingsAccount new init: '00002' Customer:customer Balance:1000000000.00.
+"adds checking and saving accounts to the bank class."
+bank add: checking.
+bank add: savings.
+
+"COMMENT: set the accrue rate for the savings account."
+bank accrue: 0.05.
+
+
+"COMMENT: values to withdraw and deposit below. Uncomment to allow code to run."
+"checking deposit: 100000000"
+checking withdraw: 200.
+"savings withdraw: 0"
+savings deposit: 200.
+(bank toString) display
+
+
+
+****** CheckingAccount.st *******
+
+
+"Notice that instead of Object, there is Account when initializing the subclass CheckingAccount, because CheckingAccount is a subclass of Account. This is how inheritance is shown in SmallTalk instead of extends like in java."
+
+Account subclass: CheckingAccount[
+  <comment: 
+    'This class contains the constructor and methods for opening a virtual checking account. No accrue rate for a checking account.'>
+  
+  
+  
+  CheckingAccount class[
+    new[
+      ^super new 
+    ]
+  ]
+
+  init:thisNumber Customer:thisCustomer Balance:thisBalance [
+    number:= thisNumber.
+    customer:= thisCustomer.
+    balance:= thisBalance.
+  ]
+
+  accrue:rate[]
+
+ ]
+
+
+****** Customer.st ******
+
+
+Object subclass: Customer [
+  <comment:
+    'This class stores a name for a checking and/or savings account.'>
+  
+  
+  |name|
+
+  Customer class [
+    new[
+      ^super new 
+    ]
+  ]
+
+  init: thisName [
+    name:= thisName.
+  ]
+
+  toString [
+    ^name
+  ]
+]
+
+
+****** SavingsAccount.st ******
+
+
+"Notice that instead of Object, there is Account. This is how inheritance is shown in SmallTalk."
+
+Account subclass: SavingsAccount [
+     
+     <comment:
+      'This class contains the constructor and methods for opening a virtual savings account and the logic for accrue rate.'>
+     
+     |interest|
+     
+     
+  SavingsAccount class [
+      new [
+	^super new 
+    ]
+  ]
+
+  init:thisNumber Customer:thisCustomer Balance:thisBalance [
+    number:= thisNumber.
+    customer:= thisCustomer.
+    balance:= thisBalance.
+    interest:=0.
+  ]
+
+  accrue:rate [
+    balance:= balance+(balance*rate).
+    interest:= interest+(balance*rate).
+  ]
+  
+]
+
+
+
+****** README ******
+
+
+# Taylor Roberts
+# Dr. Buffenbarger
+# la2: Banking101 in SmallTalk
+# CS354
+
+This program suite allows a user to create a checking and/or savings account. The user also gets to set their own made up values that go into the virtual checking and savings account. 
+
+The checking/savings accounts take in an account number, customer value (which is simply a name), and an initial balance. 
+
+Money can be withdrawn and added to these accounts as well (examples at the bottom of the Bank.st file)
+
+## Getting Started & Running
+
+To get started set your values within the Bank.st file (COMMENT: indicate where to enter in fields within the file, at the bottom)
+
+after entering your values, compile the program suite in this specific order:
+
+[User@computer]$ gst Customer.st Account.st CheckingAccount.st SavingsAccount.st Bank.st
+
+### Prerequisites
+
+In order to run SmallTalk programs, you'll have to download the GNU SmallTalk.
+Refer to the below link in order to successfully compile a run the program suite. 
+http://smalltalk.gnu.org/download
+
+## Authors
+
+Taylor Paul Roberts, James Buffenbarger, BoiseState CS department

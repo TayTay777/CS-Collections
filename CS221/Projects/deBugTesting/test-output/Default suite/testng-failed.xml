@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="TestSimpleSet_Empty_addA_A">
+        <methods>
+          <include name="testContains_B"/>
+          <include name="testRemove_A"/>
+          <include name="testAdd_A"/>
+          <include name="testRemove_B"/>
+          <include name="testContains_A"/>
+          <include name="testIsEmpty"/>
+          <include name="testSize"/>
+          <include name="testAdd_B"/>
+          <include name="initializeSet"/>
+          <include name="testToString"/>
+        </methods>
+      </class> <!-- TestSimpleSet_Empty_addA_A -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,28 @@
+# Taylor Roberts
+# Dr. Buffenbarger
+# la2: Banking101 in SmallTalk
+# CS354
+
+This program suite allows a user to create a checking and/or savings account. The user also gets to set their own made up values that go into the virtual checking and savings account. 
+
+The checking/savings accounts take in an account number, customer value (which is simply a name), and an initial balance. 
+
+Money can be withdrawn and added to these accounts as well (examples at the bottom of the Bank.st file)
+
+## Getting Started & Running
+
+To get started set your values within the Bank.st file (COMMENT: indicate where to enter in fields within the file, at the bottom)
+
+after entering your values, compile the program suite in this specific order:
+
+[User@computer]$ gst Customer.st Account.st CheckingAccount.st SavingsAccount.st Bank.st
+
+### Prerequisites
+
+In order to run SmallTalk programs, you'll have to download the GNU SmallTalk.
+Refer to the below link in order to successfully compile a run the program suite. 
+http://smalltalk.gnu.org/download
+
+## Authors
+
+Taylor Paul Roberts, James Buffenbarger, BoiseState CS department

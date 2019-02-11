@@ -1,0 +1,86 @@
+****************
+* Magic Squares
+* CS 221-3
+* 09/09/2016
+* Taylor Roberts
+**************** 
+
+OVERVIEW:
+
+This program package is designed to read and write Magic Squares. When reading 
+Magic Squares it makes sure they are valid.
+
+
+INCLUDED FILES:
+
+ 
+ * MagicSquare.java - source code for creating Magic Squares and writing them
+ * MagicSquareTester.java - driver class for MagicSquare.java
+ * README - this file
+
+
+COMPILING AND RUNNING:
+
+ The program can be ran from terminal by java MagicSquareTester (-check | -create) fileName (size)
+ The words in paranthesis can vary, for example if you want to check a square, you need not
+ put in the size. If you would like to create a magic square, you must put in a new filename 
+ and a size. You cannot check and create at the same time. 
+ 
+ In order to run the java file, you must first compile it with javac then the file name. 
+ You must be in the same file directory as the location of the java file. 
+ 
+ Ex.
+ $ javac MagicSquareTester.java
+ ...then
+ $ java MagicSquareTester -create newMagicSquare.txt 7
+ 
+ Please compile all other java files before running, although you only need to run the driver file.
+ 
+ If there is any issues with your 
+ input, a helpful error message will appear. 
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+ The MagicSquareTester class does not contain much of the brains of the operation. 
+ The MagicSquare class contains several methods that primarily rely on nested for loops 
+ to go through the array that stores all of the individual magis square numbers. The nested 
+ for loops, in my opinion, are the more complicated aspects of the codes construction. 
+ 
+ Several objects for file are created and passed between methods, making the program a bit 
+ of a study, in order to understand where the file is being created from. If you look at the 
+ MagicSquareTester you can see the file object being created, from there you can follow it 
+ to find the path, which thinking of was the most difficult for me. 
+
+ As stated before, the MagicSquareTester class runs the calculations that the MagicSquare class makes. 
+ The MagicSquareTester basically just reads your arguments you enter, then runs them through the 
+ MagicSquare framework. 
+ 
+ I tried to make the program as efficient as possible. If anything, I think I could improve the code 
+ by getting rid of some variables that are repeated, if possible. Besides that I am pretty impressed on 
+ how the code is elligent in its simplicity.
+
+ The algorith for creating the magic square itself was given to me, so unfortunately I cannot add much 
+ to that. If you want to know the algoriths, simply check the code. All the variables are named accurately
+ except for mSc, which stands for Magic Square Container. 
+
+TESTING:
+
+ I have a series of println loops set up within the code that I have commented out with a note. 
+ these loops were key in testing the code before running through the driver class. 
+ Basically they print out the contents of a file to make sure it is reading accurately, and also 
+ print out what the algorithm for creating a magic is generating, in order to make sure the numbers are 
+ correct, all while looking at a correct magic square provided to me. If the numbers matched, all was good.
+
+
+DISCUSSION:
+ 
+ There was an issue with the writing method writeMatrix(). For some reason it was simply not working with 
+ the createMatrix() method's information. I moved computers while trying to figure out this issue, and in 
+ the move, my writeMatrix() method got completly deleted somehow. After re-writing it, everything was easy 
+ to fix, and everything worked within minutes. I have not done much file writing, so that was a new hurtle
+ to overcome, but very nice seeing the results. Overall I am glad I wrote this program, and I might even
+ use it in the future!
+ 
+
+

@@ -1,0 +1,211 @@
+****************
+* CircuitTracer
+* CS 221
+* 12/09/2016
+* Taylor Roberts
+**************** 
+
+OVERVIEW:
+
+Program verifies the format of a file of a maze-like grid representing
+a circuit board made up of characters that represent open or closed moves. 
+
+Ex. 
+
+3,4
+OO1O
+OXXO
+O2OO
+
+This program uses a brute-force algorithm to find every possible path, 
+from 1 to 2, then returns the shortest ones. X is an invalid path move, 
+where O (capital ‘o’) is a valid path move.
+
+
+INCLUDED FILES:
+
+ e.g.
+ * CircuitTracer.java - driver class
+ * CircuitBoard.java - file checker/parser
+ * TraceState.java - creates move instances
+ * Storage.java - creates storage for TraceStates
+ * InvalidFileFormatException.java - exception for files with an invalid format
+ * OccupiedPositionException.java - exception for making an invalid move in the maze 
+ * README - this file
+ * an assortment of fileName.dat files that represent the mazes’
+      -files name Circuit are valid, whereas files name invalid are not
+
+
+COMPILING AND RUNNING:
+
+This program uses all of the above classes together in the 
+driver class, CircuitTracer.java. The user must compile all of the 
+‘fileName.java’ files before running the driver class. 
+
+-Running
+
+Navigate to directory of files in the console…
+
+cd user/workspace/CircuitTracer
+
+From there, I would recommend executing ‘ls’ in the command line to 
+show all the possible test files. 
+
+Compile all java files…
+
+$ javac CircuitTracer.java
+$ javac CircuitBoard.java
+$ javac TraceState.java
+$ javac Storage.java
+$ javac InvalidFileFormatException.java
+$ javac OccupiedPositionException.java
+
+There are two ways to store the moves the path across the 
+maze takes. Either a queue storage, or a stack storage
+
+There is also two ways to output your results, either via 
+the console or through a graphic user interface.
+Currently the GUI is unsupported, so you’ll will have to 
+use the console output every time. 
+
+Run the driver class…
+
+$ java CircuitTrace [-q or -s] [-c or -g] fileName.dat
+
+-q for queue storage
+-s for queue storage
+-c for console
+-g for GUI
+
+Results will show all the shortest paths to the finish line 
+if you have chosen a valid file.
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+CircuitBoard.java
+
+This class takes in the file contents, and makes sure every element 
+matches the valid format rules of the program. It also stores all the 
+elements into a char[][] two dimensional array, that represents rows 
+and columns. Example char[row#][col#]. Please take note that because 
+this is an array, the first row and column are 0. If the file is not 
+found, and FileNotFoundException will be thrown, and if the file is 
+in an invalid format, the InvalidFileFormatException exception will
+be thrown. 
+
+TraceState.java
+
+TraceState.java uses its own methods and the methods from the 
+CircuitBoard.java class to create paths, or traces, to the finish line. 
+
+Ex. 
+
+OO1O        OO1T
+OXXO   to…  OXXO  T represents the trace, or step in the path
+O2OO        O2OO
+
+The tracetate constructor is designed to take in a tracestate object…
+Every time a new tracetate is created with the tracetate constructor, 
+an additional trace is added, adjacent to the last trace added. 
+if I where to pass in…
+
+OO1T
+OXXO
+O2OO
+
+into the tracestate constructor, the new triacetate would be…
+
+OO1T
+OXXT
+O2OO
+
+again…
+
+OO1T
+OXXT
+O2OT
+
+The TraceState constructor does not find the next possible move, that’s is done
+by the Brute Force algorithm in CircutTracer.java
+
+Storage.java
+
+This class creates storage objects for the TraceStates to be stored into. 
+You can choose to implement the storage as a queue or a stack.
+
+CircuitTracer.java
+
+This class is the main driver class that takes in the command line arguments
+and runs the brute-force algorithm to solve for the shortest path for the circuit trace.
+After all the shortest paths are found, they are printed out to the console or the GUI
+
+Brute-Force algorithm
+
+Every the trace checks for its next move, it has four possible moves, up, right, down, 
+and left. I chose to check in this order, b/c it’s easy to remember the movement of 
+a clock. Those four spots can be checked with methods from the circuitBoard class and 
+the TraceState class. Every time there is a possible open spot, the TraceState contructor
+is called, with the col and row of the open spot input into the constructor. This is 
+how the TraceState method knows where to put the trace. Once this trace is made, the 
+current state of the maze is saved into a Storage.java object. 
+
+while that storage object is not empty, a remove method will pull the first TraceState
+object out of the storage list, and see if it’s last trace is adjacent to 2. If so,
+this TraceState is stored into an ArrayList<TraceState> called bestPaths. If the last 
+trace is not adjacent to 2, the removed triacetate’s last trace is checked for 
+the four open spots. If any are open, this triacetate becomes a new triacetate object 
+with the added trace, and then added to storage once again to be checked. The algorithm 
+will keep doing this until every possible path is attempted, hence the brute-force of trying
+every possible path. Also to note, before a finished maze is added to the bestPaths array list, 
+it’s path length is compared to that of the already stored paths. If the path is shorter than 
+the ones already stored, they will be removed and replaced. There can be more than one path 
+stored as long as they have the same size, of course. 
+
+The shortest survives.
+
+Once there are no more trace states to look at, the algorithm is done, and the results 
+in the bestPaths are printed out to the console or shown in a GUI. 
+
+TESTING:
+
+Ran all the test files provided to make sure the error message on the console matched
+what the actual problem was I could see in the file. At first some tests worked, while
+others partly worked. Looking at the four different positions from the start point
+proved most useful for testing. 
+
+
+DISCUSSION:
+ 
+At first, figuring out how all the classes worked together seemed challenging. Once I actually 
+read through everything 3 times or so, it just clicked together. 
+
+I had a major issue with most of my tests. Only about half of the results where showing up that 
+should be. I could not imagine how this was happening. After I did some debugging, I found that 
+the part of the code that I quadruple checked for simple coding was still off by one integer. 
+I had to delete one ‘-‘ sign and the whole program started working. 
+ 
+The traceState constructor took the longest to grasp, but once I did, it stuck.  
+ 
+ANALYSIS:
+
+-Comparing stack storage vs queue store for 3*3 circuit tracer
+
+-Although the queue storage give the first finished result one step sooner than a stack storage, the stack storage comes back and gets one over the queue storage. It seems like they equal out to about O(n). The stack storage generates less states in the beginning compared to queue, but then the stack generates more at the end compared to queue, which generates less. So again, I would say about O(n) depending on the maze layout. 
+
+-Both the stack and the queue must come out to have the same total amount of searches. Even though they grow different routes at different times, each path still uses the same algorithm to get to the end. 
+
+-The big-Oh runtime for the search algorithm is O(n), n being the number of characters in the maze.
+
+-Stack seems to take up more memory initially than the queue storage, then queue storage takes up more.
+
+-Yes, but it depends on where the end is. It’s random which one finds a solution first, because its random where the end is.
+
+-No storage method guarantees that they can find the ideal solution sooner, just like no one can guarantee what a random number will be. 
+
+
+
+
+
+
+

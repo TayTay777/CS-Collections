@@ -1,0 +1,9 @@
+Grade: 50/50
+=================================================
+Tasks:
+- Makefile compiles all provided files (main.c, f1.c, f2.c f3.c)          : 10/10
+- Makefile uses the macros CC, CFLAGS, $@, and $^ (extra macros are fine) : 15/15
+- Makefile properly detects header file changes (-MMD flag or DEPENDS)    : 10/10
+- Make all builds everything	   		      	      		  : 5/5
+- Make clean removes all generated files                 		  : 5/5
+- Make myprog build the the executable					  : 5/5

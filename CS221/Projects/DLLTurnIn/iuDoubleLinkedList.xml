@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Indexed Unordered List">
+
+  <test name="IUDoubleLinkedList">   
+  
+  	<parameter name="listType" value="doubleLinkedList"/> 
+  	
+    <classes>     
+
+      
+      
+      
+      
+      
+      
+		<class name="Test_Empty_addToFrontA_A"/>
+		<class name="Test_Empty_addToRearA_A"/>
+		<class name="Test_Empty_addA_A"/>
+		<class name="Test_Empty_addAtIndex0A_A"/>
+		<class name="Test_A_removeFirst_Empty"/>
+		<class name="Test_A_removeLast_Empty"/>
+		<class name="Test_A_removeA_Empty"/>
+		<class name="Test_A_addAfterBA_AB"/>
+		<class name="Test_A_removeAtIndex0_Empty"/>
+		<class name="Test_A_set0B_B"/>
+		<class name="Test_AB_removeFirst_B"/>
+		<class name="Test_AB_removeLast_A"/>
+		<class name="Test_AB_removeA_B"/>
+		<class name="Test_AB_removeB_A"/>
+		<class name="Test_AB_addToFrontC_CAB"/>
+		<class name="Test_AB_removeAtIndex0_B"/>
+		<class name="Test_AB_removeAtIndex1_A"/>
+		<class name="Test_AB_addAtIndex1C_ACB"/>
+		<class name="Test_ABC_removeLast_AB"/>
+		<class name="Test_ABC_removeC_AB"/>
+		<class name="Test_ABC_remove1_AC"/>
+		<class name="Test_ABC_IterRemoveA_BC"/>
+		<class name="Test_newList"/>
+		<class name="Test_A_addToFrontB_BA"/>
+		<class name="Test_A_IterRemoveA_empty"/>
+		<class name="Test_ABC_IterRemoveA_BC"/>
+		<class name="Test_ABC_IterRemoveB_AC"/>
+		<class name="Test_ABC_IterRemoveC_AB"/>
+      
+      
+    </classes>
+    
+  </test> <!-- IUDoubleLinkedList -->
+
+</suite> <!-- Indexed Unordered List -->

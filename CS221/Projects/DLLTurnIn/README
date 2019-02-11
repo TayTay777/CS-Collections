@@ -1,0 +1,125 @@
+************************************
+* DoubleLinkedList w/ ListIterator *
+* CS 221-3                         *
+* 11/19/2016                       *
+* Taylor Roberts                   *
+************************************
+
+
+OVERVIEW:
+
+
+A set of programs used to test the operation of getter and setter methods in lists of elements. The tests compare expected results with actual results after the method(s) have been implemented. There is also a user-end iterator for navigation, which is also tested in the same manor. 
+
+
+INCLUDED FILES:
+
+ 
+ * IUDoubleLinkedList.java - Contains all the getter/setter methods for DLL lists and getter/setter methods for ListIterator
+
+ * DLLNode.java - constructor class for double linked nodes (elements in list(s))
+
+ * iuDoubleLinkedListitr.xml - contains ListItrerator and Itrerator test class files
+
+ * iuDoubleLinkedList.xml - contains test class files
+
+ * IndexedUnorderedList.java - ADT interface
+
+ * IUListWithIterator.java - adds method names to IndexedUnorderedList’s interface for ListIterator 
+
+ * TestCase.java - Test class used for for implementing IndexedUnorderedList and IUListWithIterator interface
+
+ * README - this file
+
+*********************Test Classes*********************
+
+ * Test_Empty_addToFrontA_A
+ * Test_Empty_addToRearA_A
+ * Test_Empty_addA_A
+ * Test_Empty_addAtIndex0A_A
+ * Test_A_removeFirst_Empty
+ * Test_A_removeLast_Empty
+ * Test_A_removeA_Empty
+ * Test_A_addAfterBA_AB
+ * Test_A_removeAtIndex0_Empty
+ * Test_A_set0B_B
+ * Test_AB_removeFirst_B
+ * Test_AB_removeLast_A
+ * Test_AB_removeA_B
+ * Test_AB_removeB_A
+ * Test_AB_addToFrontC_CAB
+ * Test_AB_removeAtIndex0_B
+ * Test_AB_removeAtIndex1_A
+ * Test_AB_addAtIndex1C_ACB
+ * Test_ABC_removeLast_AB
+ * Test_ABC_removeC_AB
+ * Test_ABC_remove1_AC
+ * Test_ABC_IterRemoveA_BC
+ * Test_newList
+ * Test_A_addToFrontB_BA
+ * Test_A_IterRemoveA_empty
+ * Test_ABC_IterRemoveA_BC
+ * Test_ABC_IterRemoveB_AC
+ * Test_ABC_IterRemoveC_AB
+
+**************ListIterator & Iterator Test Classes**************
+
+ * ItrTest_newList
+ * ItrTest_Empty_addA_A
+ * ItrTest_ABC_remove1_AC
+ * ItrTest_AB_addC_ABC
+ * ItrTest_ABC_addD_ABCD
+ * ItrTest_newList
+ * ItrTest_A_addToFrontB_BA
+ * ItrTest_ABC_remove1_AC
+ * ListItrTest_newList
+ * ListItrTest_A_addToFrontB_BA
+ * ListItrTest_Empty_addA_A
+ * ListItrTest_ABC_remove1_AC
+ * ListItrTest_ABCD_remove1_ACD
+
+
+COMPILING AND RUNNING:
+
+
+In order to run the program you need the TestNG suite installed on your computer. Once you have that installed, you can run the iuDoubleLinkedList.xml file from the command line to test the different classes you have made. 
+
+The iuDoubleLinkedList.xml file (as well as the iuDoubleLinkedListItr.xml file) contains the names for all the test class files. 
+
+Very basic, but you must compile all java files before running. To do this, enter the java file directory through your shell program, then enter java followed by fileName.java. 
+
+You can create new test classes, then add them to one of the xml files. You should follow the same format as the other test class files. 
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+ 
+This program is designed with a class that contains getter and setter methods for a double linked list. The class is called IUDoubleLinkedList. A a double linked list is a list of elements in a line, for visual purposes, from left to right. Left being the beginning and right heading towards the end. These elements are called double linked elements because each element refers to the element in front of it and behind it. More specifically previous and next are used to describe the left and right element of the current element. 
+
+In the same class IUDoubleLinkedList there is a sub class called ListIterator. This class creates and manages the list with use of an iterator. An iterator is for an end-user, who can navigate through the list with the ListIterator. The user can also, add, remove, and set elements in the list with the ListIterator. The remove method with remove the last returned element from the iterator. For example, if you invoked the next method from the ListIterator class, it would return the next element in the list. This element it returned can now be removed. If there are no returned elements, the remove method will not know what you would like to be removed. Only next and previous methods return elements. 
+
+The test classes in this package are classes that create, change, and check a list results all in one execution. The test classes have anywhere from about 20 to 60 different tests using different combinations of methods from the IUDoubleLinkedList. These tests have an expected result, that is compared to the actual result. If the expected and actual result match, the test passes. 
+
+The type of list the class creates can be seen in the name. The name of the list for example X_Y_Z indicate the phases of the list. X represents the beginning state, Y represents the change, and Z represents the end result. The end result is also state the list is in when it is tested against those 20 - 60 combinations of methods. 
+
+There is a separate DLLNode class. This class contains the constructor and getter/setter methods for the DLLNode object. 
+
+This testing is mainly for the purpose of getting the getter and setter methods, as well as the ListIterator methods working correctly for any type of Double Linked List scenario. 
+
+
+TESTING:
+
+
+The TestNG suite was very helpful in testing the program. Once the getter and setter methods where created, TestNG was executed. This gave a list of failed and passed tests for the different test classes. Each test class had about 40 tests. I would find a trend for a specific type of test, for example the remove method. I would see that all the tests that use the remove method were not working. I would then put a break point where one of those tests started in the test class, run TestNG with the debugger, and monitor the list as well as the methods. Doing this proved very helpful in fixing almost all of my methods that were not working correctly. Some classes failed to initialize completely. If this happened, I would just insert a break point where the method was in the IUDoubleLinkedList class.
+
+
+DISCUSSION:
+ 
+
+Sometimes when you’re passing a lot of tests, a fix to another test can create many more failed tests than you had previously. This is ok, and I have learned to really wrap my head around the methods in order to be confident they are working correctly in order to move forward. 
+
+The most difficult tests for me, where the ones involving addAfter methods. Something about that method is very hard to visualize. The remove method took me so long to debug, that I finally just copy/paste the remove index method, then tweaked it a bit. It was kinda awesome that it worked, b/c it was the last issue I was having, and that fixed it in about two minutes. 
+
+Last thing. Linked lists are more difficult to debug because you cannot see the whole list like an array list, although they are more convenient when it comes to adding and removing from the middle of a list.  
+
+

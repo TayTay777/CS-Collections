@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="List Testing 2">
+  <test name="Good List"> 
+    <parameter name="listType" value="goodList"/>   
+    <classes>     
+      <class name="Test_A_removeA_Empty"/>
+      <class name="Test_A_removeLast_Empty"/>
+      <class name="Test_A_removeFirst_Empty"/>
+      <class name="Test_Empty_addA_A"/>
+      <class name="Test_Empty_addAtIndex0A_A"/>
+      <class name="Test_Empty_addToFrontA_A"/>
+      <class name="Test_Empty_addToRearA_A"/>
+      <class name="Test_A_removeAtIndex0_Empty"/>
+    </classes>
+  </test> <!-- Good List-->
+
+  <test name="Bad List">   
+    <parameter name="listType" value="badList"/> 
+    <classes>     
+      <class name="Test_A_removeA_Empty"/>
+      <class name="Test_A_removeLast_Empty"/>
+      <class name="Test_A_removeFirst_Empty"/>
+      <class name="Test_Empty_addA_A"/>
+      <class name="Test_Empty_addAtIndex0A_A"/>
+      <class name="Test_Empty_addToFrontA_A"/>
+      <class name="Test_Empty_addToRearA_A"/>
+      <class name="Test_A_removeAtIndex0_Empty"/>
+    </classes>
+  </test> <!-- Bad List-->
+</suite> <!-- List Testing 2 -->

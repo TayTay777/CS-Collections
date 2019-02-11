@@ -1,0 +1,875 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww20040\viewh14240\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
+**********************\
+Testing a List (Prt 1)\
+CS 221\
+Feb 29, 2016\
+Taylor Paul Roberts\
+**********************\
+\
+OVERVIEW:\
+\
+This is a list of ADT\'92s for file IndexedUnorderedListADT.java. This particular file has many \
+methods inherited through inheritance. Most of the methods listed as being used are from parent \
+classes.\
+\
+\
+Change Scenarios for IndexedUnorderedListADT\'85\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 1) no list -> constructor -> []\
+  Tests:\
+    removeFirst() throws EmptyCollectionException\
+    removeLast() throws EmptyCollectionException\
+    remove(A) throws ElementNotFoundException\
+    first() throws EmptyCollectionException\
+    last() throws EmptyCollectionException\
+    contains(A) returns false\
+    isEmpty() returns true\
+    size() returns 0\
+    iterator() returns an Iterator reference\
+    toString returns "[]"\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) throws IndexOutOfBoundsException\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns -1\
+2) [] -> addToFront(A) -> [A]\
+  Tests:\
+	removeFirst() returns A\
+    removeLast() returns A\
+    remove(A) returns A\
+    first() returns A\
+    last() returns A\
+    contains(A) returns true\
+	contains(B) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[A]\'94\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+	addAfter(B, A) throws no Exceptions\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+	indexOf(B) returns -1\
+3) [] -> addToRear(A) -> [A]\
+\pard\pardeftab720\partightenfactor0
+\cf0 Tests:\
+	removeFirst() returns A\
+    removeLast() returns A\
+    remove(A) returns A\
+    first() returns A\
+    last() returns A\
+    contains(A) returns true\
+	contains(B) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[A]\'94\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+	addAfter(B, A) throws no Exceptions\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+\pard\pardeftab720\partightenfactor0
+\cf0 	indexOf(B) returns -1\
+4) [] -> add(A) -> [A]\
+\pard\pardeftab720\partightenfactor0
+\cf0 Tests:\
+	removeFirst() returns A\
+    removeLast() returns A\
+    remove(A) returns A\
+    first() returns A\
+    last() returns A\
+    contains(A) returns true\
+	contains(B) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[A]\'94\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+	addAfter(B, A) throws no Exceptions\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+	indexOf(B) returns -1\
+5) [] -> add(0,A) -> [A]\
+Tests:\
+	removeFirst() returns A\
+    removeLast() returns A\
+    remove(A) returns A\
+    first() returns A\
+    last() returns A\
+    contains(A) returns true\
+	contains(B) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[A]\'94\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+	addAfter(B, A) throws no Exceptions\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+	indexOf(B) returns -1\
+6) [A] -> removeFirst() -> []\
+removeFirst() throws EmptyCollectionException\
+    removeLast() throws EmptyCollectionException\
+    remove(A) throws ElementNotFoundException\
+    first() throws EmptyCollectionException\
+    last() throws EmptyCollectionException\
+    contains(A) returns false\
+    isEmpty() returns true\
+    size() returns 0\
+    iterator() returns an Iterator reference\
+    toString returns "[]"\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) throws IndexOutOfBoundsException\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns -1\
+\pard\pardeftab720\partightenfactor0
+\cf0 7) [A] -> removeLast() -> []\
+\pard\pardeftab720\partightenfactor0
+\cf0 removeFirst() throws EmptyCollectionException\
+    removeLast() throws EmptyCollectionException\
+    remove(A) throws ElementNotFoundException\
+    first() throws EmptyCollectionException\
+    last() throws EmptyCollectionException\
+    contains(A) returns false\
+    isEmpty() returns true\
+    size() returns 0\
+    iterator() returns an Iterator reference\
+    toString returns "[]"\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) throws IndexOutOfBoundsException\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns -1\
+8) [A] -> remove(A) -> []\
+removeFirst() throws EmptyCollectionException\
+    removeLast() throws EmptyCollectionException\
+    remove(A) throws ElementNotFoundException\
+    first() throws EmptyCollectionException\
+    last() throws EmptyCollectionException\
+    contains(A) returns false\
+    isEmpty() returns true\
+    size() returns 0\
+    iterator() returns an Iterator reference\
+    toString returns "[]"\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) throws IndexOutOfBoundsException\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns -1\
+9) [A] -> addToFront(B) -> [B,A]\
+  Tests:\
+    removeFirst() returns B\
+    removeLast() returns A\
+    remove(A) returns A\
+    remove(B) returns B\
+    remove(C) throws ElementNotFoundException\
+    first() returns B\
+    last() returns A\
+    contains(A) returns true\
+    contains(B) returns true\
+    contains(C) returns false\
+    isEmpty() returns false\
+    size() returns 2\
+    iterator() returns an Iterator reference\
+    toString() returns "[B, A]"\
+    addToFront(C) throws no Exceptions\
+    addToRear(C) throws no Exceptions\
+    addAfter(C, B) throws no Exceptions\
+    addAfter(C, A) throws no Exceptions\
+    addAfter(C, D) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns B\
+    remove(1) returns A\
+    remove(2) throws IndexOutOfBoundsException\
+    add(-1, C) throws IndexOutOfBoundsException\
+    add(0, C) throws no Exception\
+    add(1, C) throws no Exception\
+    add(2, C) throws IndexOutOfBoundsException\
+    add(C) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns B\
+    get(1) returns A\
+    get(2) throws IndexOutOfBoundsException\
+    set(-1, C) throws IndexOutOfBoundsException\
+    set(0, C) throws no Exception\
+    set(1, C) throws no Exception\
+    set(2, C) throws IndexOutOfBoundsException\
+    indexOf(B) returns 0\
+    indexOf(A) returns 1\
+    indexOf(C) returns -1\
+10) [A] -> addToRear(B) -> [A,B]\
+  Tests:\
+    removeFirst() returns A\
+    removeLast() returns B\
+    remove(A) returns A\
+    remove(B) returns B\
+    remove(C) throws ElementNotFoundException\
+    first() returns A\
+    last() returns B\
+    contains(A) returns true\
+    contains(B) returns true\
+    contains(C) returns false\
+    isEmpty() returns false\
+    size() returns 2\
+    iterator() returns an Iterator reference\
+    toString() returns \'93[A, B]\'94\
+    addToFront(C) throws no Exceptions\
+    addToRear(C) throws no Exceptions\
+    addAfter(C, B) throws no Exceptions\
+    addAfter(C, A) throws no Exceptions\
+    addAfter(C, D) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+    remove(1) returns B\
+    remove(2) throws IndexOutOfBoundsException\
+    add(-1, C) throws IndexOutOfBoundsException\
+    add(0, C) throws no Exception\
+    add(1, C) throws no Exception\
+    add(2, C) throws IndexOutOfBoundsException    \
+    add(C) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    get(1) returns B\
+    get(2) throws IndexOutOfBoundsException\
+    set(-1, C) throws IndexOutOfBoundsException\
+    set(0, C) throws no Exception\
+    set(1, C) throws no Exception\
+    set(2, C) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+    indexOf(B) returns 1\
+    indexOf(C) returns -1\
+11) [A] -> addAfter(B,A) -> [A,B]\
+  Tests:\
+    removeFirst() returns A\
+    removeLast() returns B\
+    remove(A) returns A\
+    remove(B) returns B\
+    remove(C) throws ElementNotFoundException\
+    first() returns A\
+    last() returns B\
+    contains(A) returns true\
+    contains(B) returns true\
+    contains(C) returns false\
+    isEmpty() returns false\
+    size() returns 2\
+    iterator() returns an Iterator reference\
+    toString() returns \'93[A, B]\'94\
+    addToFront(C) throws no Exceptions\
+    addToRear(C) throws no Exceptions\
+    addAfter(C, B) throws no Exceptions\
+    addAfter(C, A) throws no Exceptions\
+    addAfter(C, D) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+    remove(1) returns B\
+    remove(2) throws IndexOutOfBoundsException\
+    add(-1, C) throws IndexOutOfBoundsException\
+    add(0, C) throws no Exception\
+    add(1, C) throws no Exception\
+    add(2, C) throws no Exception\
+    add(3, C) throws IndexOutOfBoundsException\
+    add(C) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    get(1) returns B\
+    get(2) throws IndexOutOfBoundsException\
+    set(-1, C) throws IndexOutOfBoundsException\
+    set(0, C) throws no Exception\
+    set(1, C) throws no Exception\
+    set(2, C) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+    indexOf(B) returns 1\
+    indexOf(C) returns -1\
+\pard\pardeftab720\partightenfactor0
+\cf0 12) [A] -> remove(0) -> []\
+13) [A] -> set(0,B) -> [B]\
+\pard\pardeftab720\partightenfactor0
+\cf0   Tests:\
+	removeFirst() returns B\
+    removeLast() returns B\
+    remove(B) returns B\
+    first() returns B\
+    last() returns B\
+    contains(B) returns true\
+	contains(A) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[B]\'94\
+    addToFront(B) throws no Exception\
+    addToRear(B) throws no Exception\
+    addAfter(A, B) throws no Exceptions\
+	addAfter(B, A) throws ElementNotFoundException \
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns B\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns B\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws no Exception\
+	set(1, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns -1\
+	indexOf(B) returns 0\
+14) [A] -> add(0,B) -> [B,A]\
+15) [A] -> add(1,B) -> [A,B]\
+16) [A,B] -> removeFirst() -> [B]\
+  Tests:\
+	removeFirst() returns B\
+    removeLast() returns B\
+    remove(B) returns B\
+    first() returns B\
+    last() returns B\
+    contains(B) returns true\
+	contains(A) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[B]\'94\
+    addToFront(B) throws no Exception\
+    addToRear(B) throws no Exception\
+    addAfter(A, B) throws no Exceptions\
+	addAfter(B, A) throws ElementNotFoundException \
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns B\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns B\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws no Exception\
+	set(1, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns -1\
+	indexOf(B) returns 0\
+17) [A,B] -> removeLast() -> [A]\
+Tests:\
+	removeFirst() returns A\
+    removeLast() returns A\
+    remove(A) returns A\
+    first() returns A\
+    last() returns A\
+    contains(A) returns true\
+	contains(B) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[A]\'94\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+	addAfter(B, A) throws no Exceptions\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+	indexOf(B) returns -1\
+\pard\pardeftab720\partightenfactor0
+\cf0 18) [A,B] -> remove(A) -> [B]\
+\pard\pardeftab720\partightenfactor0
+\cf0   Tests:\
+	removeFirst() returns B\
+    removeLast() returns B\
+    remove(B) returns B\
+    first() returns B\
+    last() returns B\
+    contains(B) returns true\
+	contains(A) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[B]\'94\
+    addToFront(B) throws no Exception\
+    addToRear(B) throws no Exception\
+    addAfter(A, B) throws no Exceptions\
+	addAfter(B, A) throws ElementNotFoundException \
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns B\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns B\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws no Exception\
+	set(1, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns -1\
+	indexOf(B) returns 0\
+19) [A,B] -> remove(B) -> [A]\
+Tests:\
+	removeFirst() returns A\
+    removeLast() returns A\
+    remove(A) returns A\
+    first() returns A\
+    last() returns A\
+    contains(A) returns true\
+	contains(B) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[A]\'94\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+	addAfter(B, A) throws no Exceptions\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+	indexOf(B) returns -1\
+20) [A,B] -> addToFront(C) -> [C,A,B]\
+21) [A,B] -> addToRear(C) -> [A,B,C]\
+22) [A,B] -> addAfter(C,A) -> [A,C,B]\
+23) [A,B] -> addAfter(C,B) -> [A,B,C]\
+24) [A,B] -> remove(0) -> [B]\
+  Tests:\
+	removeFirst() returns B\
+    removeLast() returns B\
+    remove(B) returns B\
+    first() returns B\
+    last() returns B\
+    contains(B) returns true\
+	contains(A) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[B]\'94\
+    addToFront(B) throws no Exception\
+    addToRear(B) throws no Exception\
+    addAfter(A, B) throws no Exceptions\
+	addAfter(B, A) throws ElementNotFoundException \
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns B\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns B\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws no Exception\
+	set(1, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns -1\
+	indexOf(B) returns 0\
+25) [A,B] -> remove(1) -> [A]\
+Tests:\
+	removeFirst() returns A\
+    removeLast() returns A\
+    remove(A) returns A\
+    first() returns A\
+    last() returns A\
+    contains(A) returns true\
+	contains(B) returns false\
+    isEmpty() returns false\
+    size() returns 1\
+    iterator() returns an Iterator reference\
+    toString returns \'93[A]\'94\
+    addToFront(A) throws no Exception\
+    addToRear(A) throws no Exception\
+    addAfter(A, B) throws ElementNotFoundException\
+	addAfter(B, A) throws no Exceptions\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+	remove(1) throws IndexOutOfBoundsException\
+    add(-1, A) throws IndexOutOfBoundsException\
+    add(0, A) throws no Exception\
+    add(1, A) throws IndexOutOfBoundsException\
+    add(A) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    set(-1, A) throws IndexOutOfBoundsException\
+    set(0, A) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+	indexOf(B) returns -1\
+26) [A,B] -> set(0,C) -> [C,B]\
+27) [A,B] -> set(1,C) -> [A,C]\
+28) [A,B] -> add(C) -> [A,B,C]\
+  Tests:\
+    removeFirst() returns A\
+    removeLast() returns C\
+    remove(A) returns B\
+    remove(B) returns A\
+	remove(C) returns C\
+    remove(D) throws ElementNotFoundException\
+    first() returns A\
+    last() returns C\
+    contains(A) returns true\
+    contains(B) returns true\
+    contains(C) returns true\
+	contains(D) returns false\
+    isEmpty() returns false\
+    size() returns 3\
+    iterator() returns an Iterator reference\
+    toString() returns \'93[A, B, C]\'94\
+    addToFront(C) throws no Exceptions\
+    addToRear(C) throws no Exceptions\
+    addAfter(C, B) throws no Exceptions\
+    addAfter(C, A) throws no Exceptions\
+    addAfter(C, D) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+    remove(1) returns B\
+    remove(2) returns C\
+    add(-1, C) throws IndexOutOfBoundsException\
+    add(0, C) throws no Exception\
+    add(1, C) throws no Exception\
+    add(2, C) throws no Exception\
+    add(3, C) throws IndexOutOfBoundsException\
+    add(C) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    get(1) returns B\
+    get(2) returns C\
+	get(3) throws IndexOutOfBoundsException\
+    set(-1, C) throws IndexOutOfBoundsException\
+    set(0, C) throws no Exception\
+    set(1, C) throws no Exception\
+    set(2, C) throws no Exception\
+    set(3, C) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+    indexOf(B) returns 1\
+    indexOf(C) returns 2\
+    indexOf(D) returns -1\
+\pard\pardeftab720\partightenfactor0
+\cf0 29) [A,B] -> add(0,C) -> [C,A,B]\
+30) [A,B] -> add(1,C) -> [A,C,B]\
+31) [A,B] -> add (2,C) -> [A,B,C]\
+\pard\pardeftab720\partightenfactor0
+\cf0   Tests:\
+    removeFirst() returns A\
+    removeLast() returns C\
+    remove(A) returns B\
+    remove(B) returns A\
+	remove(C) returns C\
+    remove(D) throws ElementNotFoundException\
+    first() returns A\
+    last() returns C\
+    contains(A) returns true\
+    contains(B) returns true\
+    contains(C) returns true\
+	contains(D) returns false\
+    isEmpty() returns false\
+    size() returns 3\
+    iterator() returns an Iterator reference\
+    toString() returns \'93[A, B, C]\'94\
+    addToFront(C) throws no Exceptions\
+    addToRear(C) throws no Exceptions\
+    addAfter(C, B) throws no Exceptions\
+    addAfter(C, A) throws no Exceptions\
+    addAfter(C, D) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+    remove(1) returns B\
+    remove(2) returns C\
+    add(-1, C) throws IndexOutOfBoundsException\
+    add(0, C) throws no Exception\
+    add(1, C) throws no Exception\
+    add(2, C) throws no Exception\
+    add(3, C) throws IndexOutOfBoundsException\
+    add(C) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    get(1) returns B\
+    get(2) returns C\
+	get(3) throws IndexOutOfBoundsException\
+    set(-1, C) throws IndexOutOfBoundsException\
+    set(0, C) throws no Exception\
+    set(1, C) throws no Exception\
+    set(2, C) throws no Exception\
+    set(3, C) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+    indexOf(B) returns 1\
+    indexOf(C) returns 2\
+    indexOf(D) returns -1\
+32) [A,B,C] -> removeFirst() -> [B,C]\
+33) [A,B,C] -> removeLast() -> [A,B]\
+  Tests:\
+    removeFirst() returns A\
+    removeLast() returns B\
+    remove(A) returns A\
+    remove(B) returns B\
+    remove(C) throws ElementNotFoundException\
+    first() returns A\
+    last() returns B\
+    contains(A) returns true\
+    contains(B) returns true\
+    contains(C) returns false\
+    isEmpty() returns false\
+    size() returns 2\
+    iterator() returns an Iterator reference\
+    toString() returns \'93[A, B]\'94\
+    addToFront(C) throws no Exceptions\
+    addToRear(C) throws no Exceptions\
+    addAfter(C, B) throws no Exceptions\
+    addAfter(C, A) throws no Exceptions\
+    addAfter(C, D) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+    remove(1) returns B\
+    remove(2) throws IndexOutOfBoundsException\
+    add(-1, C) throws IndexOutOfBoundsException\
+    add(0, C) throws no Exception\
+    add(1, C) throws no Exception\
+    add(2, C) throws no Exception\
+    add(3, C) throws IndexOutOfBoundsException\
+    add(C) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    get(1) returns B\
+    get(2) throws IndexOutOfBoundsException\
+    set(-1, C) throws IndexOutOfBoundsException\
+    set(0, C) throws no Exception\
+    set(1, C) throws no Exception\
+    set(2, C) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+    indexOf(B) returns 1\
+    indexOf(C) returns -1\
+34) [A,B,C] -> remove(A) -> [B,C]\
+35) [A,B,C] -> remove(B) -> [A,C]\
+36) [A,B,C] -> remove(C) -> [A,B]\
+  Tests:\
+    removeFirst() returns A\
+    removeLast() returns B\
+    remove(A) returns A\
+    remove(B) returns B\
+    remove(C) throws ElementNotFoundException\
+    first() returns A\
+    last() returns B\
+    contains(A) returns true\
+    contains(B) returns true\
+    contains(C) returns false\
+    isEmpty() returns false\
+    size() returns 2\
+    iterator() returns an Iterator reference\
+    toString() returns \'93[A, B]\'94\
+    addToFront(C) throws no Exceptions\
+    addToRear(C) throws no Exceptions\
+    addAfter(C, B) throws no Exceptions\
+    addAfter(C, A) throws no Exceptions\
+    addAfter(C, D) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+    remove(1) returns B\
+    remove(2) throws IndexOutOfBoundsException\
+    add(-1, C) throws IndexOutOfBoundsException\
+    add(0, C) throws no Exception\
+    add(1, C) throws no Exception\
+    add(2, C) throws no Exception\
+    add(3, C) throws IndexOutOfBoundsException\
+    add(C) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    get(1) returns B\
+    get(2) throws IndexOutOfBoundsException\
+    set(-1, C) throws IndexOutOfBoundsException\
+    set(0, C) throws no Exception\
+    set(1, C) throws no Exception\
+    set(2, C) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+    indexOf(B) returns 1\
+    indexOf(C) returns -1\
+37) [A,B,C] -> remove(0) -> [B,C]\
+38) [A,B,C] -> remove(1) -> [A,C]\
+  Tests:\
+    removeFirst() returns A\
+    removeLast() returns C\
+    remove(A) returns A\
+    remove(B) throws ElementNotFoundException\
+    remove(C) returns C\
+    first() returns A\
+    last() returns C\
+    contains(A) returns true\
+    contains(B) returns false\
+    contains(C) returns true\
+    isEmpty() returns false\
+    size() returns 2\
+    iterator() returns an Iterator reference\
+    toString() returns "[A, C]"\
+    addToFront(D) throws no Exceptions\
+    addToRear(D) throws no Exceptions\
+    addAfter(D, A) throws no Exceptions\
+    addAfter(D, C) throws no Exceptions\
+    addAfter(D, B) throws ElementNotFoundException\
+    add(-1, D) throws IndexOutOfBoundsException\
+    add(0, D) throws no Exception\
+    add(1, D) throws no Exception\
+    add(2, D) throws no Exception\
+    add(3, D) throws IndexOutOfBoundsException\
+    set(-1, D) throws IndexOutOfBoundsException\
+    set(0, D) throws no Exception\
+    set(1, D) throws no Exception\
+    set(2, D) throws IndexOutOfBoundsException\
+    add(D) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    get(1) returns C\
+    get(2) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+    indexOf(B) returns -1\
+    indexOf(C) returns 1\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+    remove(1) returns C\
+    remove(2) throws IndexOutOfBoundsException\
+39) [A,B,C] -> remove(2) -> [A,B]\
+  Tests:\
+    removeFirst() returns A\
+    removeLast() returns B\
+    remove(A) returns A\
+    remove(B) returns B\
+    remove(C) throws ElementNotFoundException\
+    first() returns A\
+    last() returns B\
+    contains(A) returns true\
+    contains(B) returns true\
+    contains(C) returns false\
+    isEmpty() returns false\
+    size() returns 2\
+    iterator() returns an Iterator reference\
+    toString() returns \'93[A, B]\'94\
+    addToFront(C) throws no Exceptions\
+    addToRear(C) throws no Exceptions\
+    addAfter(C, B) throws no Exceptions\
+    addAfter(C, A) throws no Exceptions\
+    addAfter(C, D) throws ElementNotFoundException\
+    remove(-1) throws IndexOutOfBoundsException\
+    remove(0) returns A\
+    remove(1) returns B\
+    remove(2) throws IndexOutOfBoundsException\
+    add(-1, C) throws IndexOutOfBoundsException\
+    add(0, C) throws no Exception\
+    add(1, C) throws no Exception\
+    add(2, C) throws no Exception\
+    add(3, C) throws IndexOutOfBoundsException\
+    add(C) throws no Exception\
+    get(-1) throws IndexOutOfBoundsException\
+    get(0) returns A\
+    get(1) returns B\
+    get(2) throws IndexOutOfBoundsException\
+    set(-1, C) throws IndexOutOfBoundsException\
+    set(0, C) throws no Exception\
+    set(1, C) throws no Exception\
+    set(2, C) throws IndexOutOfBoundsException\
+    indexOf(A) returns 0\
+    indexOf(B) returns 1\
+    indexOf(C) returns -1\
+40) [A,B,C] -> set(0,D) -> [D,B,C]\
+41) [A,B,C] -> set(1,D) -> [A,D,C]\
+42) [A,B,C] -> set(2,D) -> [A,B,D]}

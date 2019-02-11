@@ -1,0 +1,41 @@
+total 172
+drwxrwxr-x 2 farhadrasapour farhadrasapour  4096 Oct 13 11:17 .
+drwxrwxr-x 9 farhadrasapour farhadrasapour   154 Nov  8 09:43 ..
+-rwxrwxr-x 1 farhadrasapour farhadrasapour  1623 Oct  9 20:50 backpack.sh
+-rw-rw-r-- 1 farhadrasapour farhadrasapour 37474 Oct 11 13:05 log1
+-rw-rw-r-- 1 farhadrasapour farhadrasapour 24770 Oct 12 14:23 log2
+-rwxrwxr-x 1 farhadrasapour farhadrasapour  1623 Oct  9 21:06 p3backpack.sh
+-rw-rw-r-- 1 farhadrasapour farhadrasapour   570 Oct 12 14:32 p3_grade.py
+-rw-rw-r-- 1 farhadrasapour farhadrasapour   844 Oct 12 14:25 p3_push.py
+-rw-rw-r-- 1 farhadrasapour farhadrasapour  1603 Oct 10 11:36 p3.py
+-rw-rw-r-- 1 farhadrasapour farhadrasapour  1106 Oct  9 21:04 populate.py
+-rw-rw-r-- 1 farhadrasapour farhadrasapour  1098 Oct  9 21:27 popuRubric.py
+-rw-rw-r-- 1 farhadrasapour farhadrasapour   578 Oct  9 21:29 rubric
+-rw-rw-r-- 1 farhadrasapour farhadrasapour   579 Oct 10 12:05 rubric.txt
+-rw-rw-r-- 1 farhadrasapour farhadrasapour 22620 Oct 12 14:32 sec1
+-rw-rw-r-- 1 farhadrasapour farhadrasapour 29517 Oct 14 17:52 sec2
+-rw-rw-r-- 1 farhadrasapour farhadrasapour    27 Oct 11 12:05 test.in
+-rw-rw-r-- 1 farhadrasapour farhadrasapour    51 Oct 11 12:05 test.out
+backpack.sh
+log1
+log2
+p3backpack.sh
+p3_grade.py
+p3_push.py
+p3.py
+populate.py
+popuRubric.py
+rubric
+rubric.txt
+sec1
+sec2
+test.in
+test.out
+0 ls -l -a  /home/FarhadRasapour/cs253/script/p3/
+1 history
+0 ls -l -a  /home/FarhadRasapour/cs253/script/p3/
+1 history
+2 touch hello.txt
+3 cat hello.txt
+4 ls /home/FarhadRasapour/cs253/script/p3/
+5 history

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Iterator">
+	<test name="IUSingleList">   
+  		<parameter name="listType" value="singleLinkedList"/> 
+    	<classes>     
+    	
+    	
+    	
+      		<class name="ItrTest_newList"/>
+      		<class name="ItrTest_Empty_addA_A"/>
+      		<class name="ItrTest_A_addToFrontB_BA"/>
+      		<class name="ItrTest_ABC_remove1_AC"/>
+      		<class name="ItrTest_AB_addC_ABC"/>
+      		<class name="ItrTest_ABC_addD_ABCD"/>
+      		
+      		
+      		
+    	</classes>
+  	</test> <!-- IUSingleLinkedList -->
+</suite> <!-- Iterator -->

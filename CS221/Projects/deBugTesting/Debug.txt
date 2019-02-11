@@ -1,0 +1,28 @@
+Taylor Roberts
+CS 221-03
+Debugging Assignment
+
+
+
+-NewEmptySet failed with the testIsEmpty() method. 
+-placed breakpoint at the start of method
+-stepped into the boolean result variable, found isEmpty() method showing ((rear > 0) = an empty array set) within          ArraySet.java.
+ it should be (rear == 0) = an empty array set to make sense. Changed to equals. I now have more failed tests, 
+ but that test now passes.
+
+-Empty_addA_A failed a test for testContains_A
+-placed breakpoint at this method.
+-within the contains boolean method of ArraySet, the for loop is skipped... meaning 0 must be greater than rear?
+ rear = 0; should equal 1; looked into the add() method in ArraySet. It leaves rear at the place of the added 
+ element. Added a rear++; after the element assignment. Passed the test now, with considerably less errors.
+ 6 fails, 18 skips
+ 
+ -A_addB_AB has an issue with the testRemove_A and testRemove_B. Fixing the issue should take care of both. 
+ -inserted a breakpoint for the testRemove_A...
+ -eventually stepped into the remove method of ArraySet. I probably stared at it for 10 min before realizing 
+ nothing was wrong with it. I stepped over and over the method. It seemed to fail when the ArraySet expanded 
+ itself on the last stretch. Most likely due to the array bound of i+1 not existing. I took a look at the add
+ method again. In the if statement for expanding the array size, I found a wierd code that if the rear was greater/equal to the array length it should expand...
+ I changed it to if the rear was less than the array length it should expand. ran the simpleSet.xml. Wah lah. 
+ No failed tests, and a lot of green check marks. My job here is done. 
+

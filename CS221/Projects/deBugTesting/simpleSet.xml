@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Simple Set">
+
+  <test name="ArraySet">   
+    <classes>     
+      <class name="TestSimpleSet_NewEmptySet"/>
+	  <class name="TestSimpleSet_Empty_addA_A"/>
+	  <class name="TestSimpleSet_A_removeA_Empty"/>
+	  <class name="TestSimpleSet_A_addA_A"/>
+	  <class name="TestSimpleSet_A_addB_AB"/>
+	  <class name="TestSimpleSet_AB_removeA_B"/>
+	  <class name="TestSimpleSet_AB_removeB_A"/>
+	  <class name="TestSimpleSet_AB_addA_AB"/>
+	  <class name="TestSimpleSet_AB_addB_AB"/>
+	  <class name="TestSimpleSet_AB_addC_ABC"/>
+	  <class name="TestSimpleSet_ABC_removeA_BC"/>
+	  <class name="TestSimpleSet_ABC_removeB_AC"/>
+	  <class name="TestSimpleSet_ABC_removeC_AB"/>
+	  <class name="TestSimpleSet_ABC_addA_ABC"/>
+	  <class name="TestSimpleSet_ABC_addB_ABC"/>
+	  <class name="TestSimpleSet_ABC_addC_ABC"/>
+    </classes>
+  </test> <!-- ArraySet -->
+
+</suite> <!-- Simple Set -->

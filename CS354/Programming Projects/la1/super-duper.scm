@@ -1,0 +1,37 @@
+(define (super-duper source count)
+	(duper source count 0)
+)
+
+;used for checking the conditions of source and count	
+;checks for pair, null, and if the recursion is at the end of the list
+(define (duper source count curr)
+	(cond
+		((null? source) '())
+		((not (pair? source)) source)
+		((= count curr) (super-duper (cdr source) count)) 
+		;curr incremented in else statement, making sure the right amount of copies are returned
+		(else (cons (super-duper (car source) count) (duper source count (+ curr 1) )))
+	)
+)
+
+(display "\n")
+(display (super-duper 123 1))
+(display "\n")
+(display (super-duper 123 2))
+(display "\n")
+(display (super-duper '() 1))
+(display "\n")
+(display (super-duper '() 2))
+(display "\n")
+(display (super-duper '(x) 1))
+(display "\n")
+(display (super-duper '(x) 2))
+(display "\n")
+(display (super-duper '(x y) 1))
+(display "\n")
+(display (super-duper '(x y) 2))
+(display "\n")
+(display (super-duper '((a b) y) 3))
+(display "\n")
+(display (super-duper '((a b c d) y u i o) 3))
+(display "\n")

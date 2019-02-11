@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Iterator">
+  	<test name="IUArrayList">   
+  		<parameter name="listType" value="arrayList"/> 
+    	<classes>     
+      		<class name="ItrTest_newList"/>
+      		<class name="ItrTest_A_addToFrontB_BA"/>
+      		<class name="ItrTest_ABC_remove1_AC"/>
+      		<class name="ItrTest_A_removeFirst_Empty"/>
+      		<class name="ItrTest_A_removeLast_Empty"/>
+      		<class name="ItrTest_A_removeA_Empty"/>
+      		<class name="ItrTest_A_addAfterBA_AB"/>
+      		<class name="ItrTest_A_remove0_Empty"/>
+      		<class name="ItrTest_ABC_removeLast_AB"/>
+      		<class name="ItrTest_ABC_removeC_AB"/>
+      		
+      		
+      		
+    	</classes>
+  	</test> <!-- IUArrayList -->
+</suite> <!-- Iterator -->

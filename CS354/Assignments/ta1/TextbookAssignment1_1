@@ -1,0 +1,40 @@
+Java examples
+
+Q: 1.1
+
+(a) int&& = 55;
+
+(b) int;
+
+(c) int num;
+    String str = “pikachu”;
+    num = str;
+    
+(d) int num;
+    num = 6;
+    num = num/0;
+    
+(e) int[] A;
+    A = new int[4];
+    A[5] = 3;
+    
+C PL examples
+    
+Q: 1.8
+
+  Q: How accurate is this sort of dependence managment?
+  A: That depends on how well you make the make file pertaining to what is being compiled in the make file. 
+      Make files can be really complicated, but there is almost always to tool to compensate. If not properly 
+      made, the make file can be very unaccurate. 
+
+  Q: Under what circumstances will it lead to unnecessary work?
+  A: If the program is viewed, then saved. This changes the timestamp for the program which is what 
+      make uses to check if anything has been changed. If the timestamp is different make will recompile
+      files that haven't been changed. 
+  
+  Q: Under what circumstances will it fail to recompile something that needs to be recompiled?
+  A: If the header file is changed, then the C files that the header file is getting its code from 
+      need to be recompiled. By default this does not happen unless a DEPS = headerfile.h rule is made. 
+      So, if that rule is not within the make file, and the header file is changed. Running make will 
+      not effectively compile the program suite effectively.
+      

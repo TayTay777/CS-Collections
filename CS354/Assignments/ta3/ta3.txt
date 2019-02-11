@@ -1,0 +1,50 @@
+Taylor Paul Roberts
+CS354-2
+ta3-2
+
+
+
+Q6.1
+
+No. The compilers will re-arrange the operands in the most suitable order for which to compute, as the long as the same answer, following left-associativity rule before compilation, will be produced. This is primarilly to make the computation faster, and to avoid overflow. 
+
+Like the example, in 6.1.4,
+
+x = a + b - c; 
+could cause overflow if the a and b variables have an int value close to the max int value, 2, 147, 483, 647 , there would be an overflow before compiler could subtract c from the addition. If the compiler moves the variables to,
+
+x = a - c + b; 
+then there is atleast less of a chance. If c is a large enough value, then there will be no overflow. 
+
+Saying all this, the compiler has overflow flags of some sort, so it knows when an overflow happens, and then can address it accordingly. 
+
+Q6.2
+
+Yes. I'm very familiar with java, myself. When I put a lot of - signs in front of some type of number, I expect it to be treated like a * (-1) operation to the number.
+
+If the precedence was the same for x = 1----1;, the first minus sign (operator) would use 1 and - as its two operands. You cannot subract - from 1. - isn't a number. Subtracting - from 1 is intuitive. Adding parenthesis would correct the associativity. x = 1 - (-(-(-1)));, but even if you could add parenthesis, why bother when you can just change the precedence. 
+
+Q6.12
+
+This would be in scenarios where you would want to evaluate both halfs of the Boolean expression. For example if you want use an exclusive-or statement, both of the expressions on the right and left side of the exclusive-or must be evaluated and compared b/c only one can be true for the whole boolean expression to be true, rather than one or both. 
+
+Q6.25
+
+while (!all_blanks(line)){
+	line = read_line();
+	consume_line(line);
+}
+
+The while loop is very similar, I think, in terms of computation compared to the example. Everything gets looked at and evaluated the same amout of time(s).
+
+I personally only use mid-tests, ie break;, for nested if loops within a for loop, otherwise, I have not found a logical use for them. 
+
+If the shown example was a bunch of nested if loops within a for loop, I would say the break; saves a lot of extra computation, which I'm sure is a mid-loops intention. 
+
+Q6.26
+
+In this example I think it would work just fine. Is there a better way? Yes. 
+
+The for loops continue after the if statement returns false. It should just stop at that point. A flag could be added to the code indicating true/false for finding the first all zero row, then could use a break in every for-loop if the condition was true. Instead of that, there could even be another goto statement that directs the compiler to start reading just outside and after the scope of the first for loop if first_zero_row != -1.
+
+Thinking about this, there are several ways to approach it using break; boolean flags; more goto statements; or a combination. Surely there are more things I haven't even heard of that could work as well.  

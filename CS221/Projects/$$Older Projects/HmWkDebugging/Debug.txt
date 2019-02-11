@@ -1,0 +1,18 @@
+****************
+* ArraySet
+* CS 221
+* 12/25/2050
+* Taylor Roberts
+**************** 
+
+
+ 1. Found a Runtime error for the testIsEmpty method for the first set. 
+ Changed the method's < sign to == because rear is initialized at 0 to begin with. 
+ 
+ 2. Second Runtime error occured with the add method in the ArraySet.java doc. The array "set" 
+ needed another placeholder for the next int added to the array. added "rear++" at the 
+ end of the nested if statement. 
+ 
+ 3. Third error occured because the remove method in the ArraySet class was trying to copy an empty 
+ element. This empty space was the rear, as shown in the .add method. Stopped the nested while loop 
+ by changing (i < rear) to (i < rear-1)

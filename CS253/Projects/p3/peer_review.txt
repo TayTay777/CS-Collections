@@ -1,0 +1,15 @@
+Taylor Roberts & Jacob Bell(tutor, could not find a peer review partner)
+
+
+
+
+Question responses:
+1 & 2. 
+Goals include making separate functions for individual coding tasks, for example smash_get_input gets the input from the user. Another add-on was to create a history storage system, with several sub-routines that involved initializing the history fuction, adding to history, clearing history, and printing the history to the user. 
+
+3. 
+Readability: 2 Everything is indented perfectly, and variables are named "easy to understand".
+
+Structure: 2 Main litterally has like 20 or less lines of code. No tests in the code, but tests are not neccessary for this assignment in the normal sense, for example, like testing an interator in an array. 
+
+Testing: 1 This part probably shouldnt be in the review for this particular assignment, so I'm still giving a point, even though there is not tests. 

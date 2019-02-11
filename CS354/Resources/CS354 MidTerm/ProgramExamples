@@ -1,0 +1,250 @@
+SCHEME PROGRAM SUPERDUPER:
+
+(define (super-duper source count)
+	(duper source count 0)
+)
+
+;used for checking the conditions of source and count	
+;checks for pair, null, and if the recursion is at the end of the list
+(define (duper source count curr)
+	(cond
+		((null? source) '())
+		((not (pair? source)) source)
+		((= count curr) (super-duper (cdr source) count)) 
+		;curr incremented in else statement, making sure the right amount of copies are returned
+		(else (cons (super-duper (car source) count) (duper source count (+ curr 1) )))
+	)
+)
+
+(display "\n")
+(display (super-duper 123 1))
+(display "\n")
+(display (super-duper 123 2))
+(display "\n")
+(display (super-duper '() 1))
+(display "\n")
+(display (super-duper '() 2))
+(display "\n")
+(display (super-duper '(x) 1))
+(display "\n")
+(display (super-duper '(x) 2))
+(display "\n")
+(display (super-duper '(x y) 1))
+(display "\n")
+(display (super-duper '(x y) 2))
+(display "\n")
+(display (super-duper '((a b) y) 3))
+(display "\n")
+(display (super-duper '((a b c d) y u i o) 3))
+(display "\n")
+
+
+************Scheme Examples:
+
+
+SCHEME
+
+; Scheme sum program
+
+(define (sum seq)
+  (if (null? seq)
+      0
+      (+ (car seq) (sum (cdr seq)))))
+
+(display (sum '(5 6 1 8 3 7)))
+(display "\n")
+
+
+
+JAVA
+
+// Java sum program
+
+public class Sum {
+
+    public static int sum(int[] seq) {
+	int s=0;
+	for (int v: seq)
+	    s+=v;
+	return s;
+    }
+
+    public static void main(String[] args) {
+	int[] ints={5,6,1,8,3,7};
+	System.out.println(sum(ints));
+    }
+
+}
+
+
+
+
+
+*******************************************************************
+
+SMALLTALK EXAMPLES:
+
+************************SIMPLE SUM:
+
+***********JAVA
+
+// Java sum program
+
+public class Sum {
+
+    public static int sum(int[] seq) {
+	int s=0;
+	for (int v: seq)
+	    s+=v;
+	return s;
+    }
+
+    public static void main(String[] args) {
+	int[] ints={5,6,1,8,3,7};
+	System.out.println(sum(ints));
+    }
+
+}
+
+
+*************SMALLTALK
+
+"gst sum.st"
+
+"Smalltalk sum program"
+
+Object subclass: Sum [
+
+    Sum class [
+        sum: seq [
+            |s| s:=0.
+            seq do: [ :v | s:=s+v ].
+            ^s
+        ]
+    ]
+
+]
+
+|seq| seq:=#(5 6 1 8 3 7).
+(Sum sum: seq) printNl
+
+
+************************SPREAD OUT SUM:
+
+***********JAVA
+
+// Java OO sum program
+
+public class Sum {
+
+    private int s;
+
+    public Sum() {
+	init();
+    }
+
+    public void init() {
+	s=0;
+    }
+
+    public int sum(int[] seq) {
+	for (int v: seq)
+	    s+=v;
+	return s;
+    }
+
+    public static void main(String[] args) {
+	int[] seq={5,6,1,8,3,7};
+	Sum sum=new Sum();
+	System.out.println(sum.sum(seq));
+    }
+
+}
+
+
+*************SMALLTALK
+
+"gst sum.st"
+
+"Smalltalk sum program"
+
+Object subclass: Sum [
+    |s|
+
+    "A constructor (e.g., new) must be a class method."
+    Sum class [
+        new [
+            ^super new init
+        ]
+    ]
+
+    "An initializer (e.g., init) must be an instance method."
+    init [
+        s:=0
+    ]
+
+    sum: seq [
+        seq do: [ :v | s:=s+v ].
+        ^s
+    ]
+
+]
+
+|seq| seq:=#(5 6 1 8 3 7).
+|sum| sum:=Sum new.
+(sum sum: seq) printNl
+
+*************SMALLTALK NOTES
+
+A subclass in smallTalk is like a class in java
+To create a subclass in smallTalk,
+Object subclass: <nameOfSubClass>
+
+The period is used to end statements.
+
+The carot "^" is used instead of "return" like in java
+
+method names end with a colon. 
+Example: 
+methodName: 
+It is uneccessary to state a return type for the method that is being created.
+
+Example of seq method from sum.st
+    sum: seq [
+        seq do: [ :v | s:=s+v ].
+        ^s
+    ]
+
+To call a subclasses method in smallTalk, create the object 
+<objectName>:=<nameOfSubClass> new. 
+Then call the object name, followed by the method, then a semicolon with the parameters of the method afterward within parenthesis.
+(<nameOfObject> <nameOfMethod>: <methodsParameters>)
+
+Instead of curly braces, smallTalk uses square braces. " != {}; == [] "
+
+The entire body of the <nameOfSubClass> act as parameters to the Oject method subclass:.
+
+Constructor:
+In java, you have to create an object by calling new, in smallTalk new must be a class method. 
+
+Example:
+
+    "A constructor (e.g., new) must be a class method."
+    <nameOfSubClass> class [
+        new [
+            ^super new <initializerMethodForVariables>
+        ]
+    ]
+    
+*************END SMALLTALK NOTES
+
+**********************************************************
+
+
+
+
+
+
+
+
+

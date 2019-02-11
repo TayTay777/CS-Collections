@@ -1,0 +1,67 @@
+http://cs.boisestate.edu/~jxiao/cs333/
+
+sudo ufw allow from 192.168.0.4 to any port 22
+
+mine
+
+
+oponents
+172.16.62.128
+172.16.62.129
+
+$ ssh -L 8000:172.16.62.128:23 seed@172.16.62.129
+$ ssh -L 8000:172.16.62.129:23 seed@172.16.62.128
+
+
+ssh onyxnode<computer number>
+
+Red Vs. Blue Game
+ 
+sudo ufw status numbered
+sudo ufw delete [rule number]
+
+sudo ufw enable/disable
+
+sudo ufw deny 22/(tcp|udp)
+
+sudo ufw deny 23/(tcp|udp)
+
+
+sudo ufw reset 
+*removes the existing rules
+
+
+
+                   104.16.194.61
+                   104.16.19<1-5>.61
+sudo ufw deny in from 104.16.195.61 
+sudo ufw deny in from 104.16.195.61 to <any> port <22/23>
+sudo ufw deny in from 104.16.195.61 to <protocol> port <port number>
+
+Disable ping file path /etc/ufw/before.rules
+***Change accept's to drop's for the given commands below***
+should look like this...
+-A ufw-before-input -p icmp --icmp-type destination-unreachable -j DROP
+-A ufw-before-input -p icmp --icmp-type source-quench -j DROP
+-A ufw-before-input -p icmp --icmp-type time-exceeded -j DROP
+-A ufw-before-input -p icmp --icmp-type parameter-problem -j DROP
+-A ufw-before-input -p icmp --icmp-type echo-request -j DROP
+
+arp -a 
+
+192.168.150.128
+192.168.150.129
+
+for 128
+sudo ufw deny in from 192.168.150.129 to 192.168.150.128
+
+for 129
+sudo ufw deny in from 192.168.150.128 to 192.168.150.129
+
+ask about the cookie on/off thingy from 3-way handshake lab
+
+$ ssh -L 8000:Machine_C_IP:23 seed@Machine_B_IP
+      -D (stands for dynamic)
+      -L (stands for on server)
+      
+https://docs.google.com/spreadsheets/d/1tfxUMe-hqRh36Ado2KlgZ8xloY6XYLisz-i_fOEuZ8U/edit#gid=1674490511   

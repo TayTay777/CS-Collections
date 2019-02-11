@@ -1,0 +1,29 @@
+Grade: 47/100
+=================================================
+Tasks:
+-Command line arguments				: 17/20
+ 1) -m command line requires argument (10pts)    10
+ 2) -h prints help string (5pts)                 2    
+does not print helpful string
+3) program still runs given no arguments (5pts)  5
+
+-Word counting					: 20/20
+ 1) number of words correct (5pts)
+ 2) number of lines correct (5pts)
+ 3) number of characters correct (5pts)
+ 4) number of each digit (0-9) correct (5pts)
+
+-Simple Word Matching				: 0/40
+ 1) number of matching words is correct (10pts)
+ 2) Correctly handles large text file input (10pts)
+ 3) Correctly handles large -m arguments (10pts)
+ 4) correctly handles overlapping letters (10pts)
+ does not print match value
+
+-README						: 0/10
+ 1) README uses template specified in the spec (1pts)
+ 2) README has all sections filled out (1pts)
+ 3) README is well written and readable (8pts)
+there is no REDME file
+
+-In class peer review				:10/10

@@ -1,0 +1,15 @@
+Taylor Roberts & Zane Allen
+
+
+
+
+Question responses:
+1 & 2. 
+Goals include making separate functions for individual coding tasks, for example smash_get_input gets the input from the user. Another add-on was to create a history storage system, with several sub-routines that involved initializing the history fuction, adding to history, clearing history, and printing the history to the user. 
+
+3. 
+Readability: 2 Everything is indented perfectly, and variables are named "easy to understand".
+
+Structure: 2 Looks pretty good. Everyone has to follow the same structure for this assignment, and the student followed it to his best abilities of keeping it structured nicely. 
+
+Testing: 2 This part would usually be a 1, but the student.. went above and beyond by having his own test file already finished and working. 

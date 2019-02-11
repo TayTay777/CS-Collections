@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Iterator and ListIterator">
+
+  <test name="IUDoubleLinkedList">   
+  
+  	<parameter name="listType" value="doubleLinkedList"/> 
+  	
+    <classes>   
+    
+          	<class name="ItrTest_newList"/>
+      		<class name="ItrTest_Empty_addA_A"/>
+      		<class name="ItrTest_ABC_remove1_AC"/>
+      		<class name="ItrTest_AB_addC_ABC"/>
+      		<class name="ItrTest_ABC_addD_ABCD"/>
+			<class name="ItrTest_newList"/>
+      		<class name="ItrTest_A_addToFrontB_BA"/>
+     		<class name="ItrTest_ABC_remove1_AC"/>
+     		<class name="ListItrTest_newList"/>
+     		<class name="ListItrTest_A_addToFrontB_BA"/>
+     		<class name="ListItrTest_Empty_addA_A"/>
+     		<class name="ListItrTest_ABC_remove1_AC"/>
+			<class name="ListItrTest_ABCD_remove1_ACD"/>
+      
+    </classes>
+    
+  </test> <!-- IUDoubleLinkedList -->
+
+</suite> <!-- Iterator & ListIterator -->
